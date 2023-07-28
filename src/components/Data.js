@@ -1,0 +1,42 @@
+export const AssetData = [
+  {
+    id: 1,
+    name: "car",
+    category: "automobile",
+    year: 2001,
+    profit: 10000,
+    loss: 55000,
+  },
+  {
+    id: 2,
+    name: "yatcth",
+    category: "automobile",
+    year: 2002,
+    profit: 15200,
+    loss: 50000,
+  },
+  {
+    id: 3,
+    name: "apartment",
+    category: "infrastructure",
+    year: 2003,
+    profit: 75200,
+    loss: 10000,
+  },
+  {
+    id: 4,
+    name: "building",
+    category: " infrastructure",
+    year: 2004,
+    profit: 25000,
+    loss: 35000,
+  },
+  {
+    id: 5,
+    name: "watch",
+    category: "infrastructure",
+    year: 2005,
+    profit: 60000,
+    loss: 44000,
+  },
+];

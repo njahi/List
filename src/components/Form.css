@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  background-color: darkolivegreen;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+}

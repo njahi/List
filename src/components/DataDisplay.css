@@ -1,0 +1,14 @@
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.asset-table th,
+.asset-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.asset-table th {
+  background-color: blueviolet;
+}

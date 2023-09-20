@@ -6,7 +6,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -17,7 +17,7 @@ app.use(
 
 // Add a new asset
 app.post("/api/asset", async (req, res) => {
-  const { name, value, profit, loss, year } = req.body;
+  const { name, value, profit, loss, year, imageUrl } = req.body;
   const dateCreated = new Date();
   const dateUpdated = new Date();
 
@@ -31,6 +31,7 @@ app.post("/api/asset", async (req, res) => {
         year: parseInt(year),
         dateCreated: dateCreated,
         dateUpdated: dateUpdated,
+        imageUrl: imageUrl,
       },
     });
     debug("AddedAsset:", asset);
@@ -45,7 +46,7 @@ app.post("/api/asset", async (req, res) => {
 // Update an existing asset
 app.put("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
-  const { name, value, profit, loss, year } = req.body;
+  const { name, value, profit, loss, year, imageUrl } = req.body;
   const dateUpdated = new Date();
 
   try {
@@ -58,6 +59,7 @@ app.put("/api/asset/:id", async (req, res) => {
         loss,
         dateUpdated,
         year,
+        imageUrl,
       },
     });
     debug("Updated asset:", updatedAsset);

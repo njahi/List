@@ -6,6 +6,7 @@ function Form({ onSubmit }) {
   const { register, handleSubmit, reset } = useForm();
   const [dateCreated, setDateCreated] = useState(new Date());
   const [dateUpdated, setDateUpdated] = useState(new Date());
+  const [imageUrl, setImageUrl] = useState("");
 
   const handleFormSubmit = async (data) => {
     try {
@@ -16,6 +17,7 @@ function Form({ onSubmit }) {
         ...data,
         dateCreated: formattedDateCreated,
         dateUpdated: formattedDateUpdated,
+        imageUrl: imageUrl,
       };
       console.log(newData);
       const response = await fetch("http://localhost:5000/api/asset", {
@@ -36,6 +38,16 @@ function Form({ onSubmit }) {
     } catch (error) {
       console.error(error);
     }
+  };
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setImageUrl(e.target.result);
+    };
+
+    reader.readAsDataURL(file);
   };
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -65,6 +77,12 @@ function Form({ onSubmit }) {
         onChange={(e) => setDateUpdated(new Date(e.target.value))}
         placeholder="dateUpdated"
         readOnly
+      />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageUpload}
+        placeholder="image"
       />
       <button type="submit">Add Asset</button>
     </form>

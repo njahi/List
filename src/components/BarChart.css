@@ -1,0 +1,9 @@
+.Bar-container {
+  width: 500px;
+  height: 500px;
+  margin: 10px;
+  background-color: lightgrey; /* Set your desired background color */
+  font-family: Arial, sans-serif; /* Set your desired font family */
+  border-radius: 10px; /* Add border radius for a 3D-like effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -27,6 +27,11 @@ function ProductCard() {
         {assets.map((product) => (
           <Col align="center">
             <Card key={product.id} className="product-card">
+              <Card.Img
+                src={product.imageUrl}
+                alt={product.name}
+                className="product-image"
+              />
               <Card.Body className="product-details">
                 <Card.Title className="product-name">{product.name}</Card.Title>
                 <Card.Text className="product-value">

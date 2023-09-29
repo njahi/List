@@ -1,8 +1,14 @@
-nav {
+.nav-bar {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   background-color: darkgrey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 7.2rem;
+  padding: 0 3.2rem;
+  border-radius: 0.9rem;
 }
 nav img {
   border-radius: 50%;
@@ -17,4 +23,17 @@ ul {
 }
 li {
   margin-left: 10px;
+}
+.search {
+  justify-self: center;
+  border: none;
+  padding: 10px;
+  font-size: 0.8rem;
+  border-radius: 0.7rem;
+  width: 20rem;
+  transition: all 0.3s;
+  color: var(--color-text);
+
+  /* background-color: var(--color-background-900);
+  background-color: var(--color-primary-light); */
 }

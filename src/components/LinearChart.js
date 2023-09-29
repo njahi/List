@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { AssetData } from "../Data";
 import "./LinearChart.css";
 ChartJS.register(...registerables);
 
 function LineChart() {
-  const assetData = {
-    labels: AssetData.map((data) => data.year),
+  const [assets, setAssets] = useState([]);
+  const fetchAssets = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/asset");
+      const data = await response.json();
+      setAssets(data);
+    } catch (error) {
+      console.error("Error fetching assets:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAssets();
+  }, []);
+
+  const Assets = {
+    labels: assets.map((data) => data.year),
     datasets: [
       {
         label: "Asset profit",
-        data: AssetData.map((data) => data.assetProfit),
+        data: assets.map((data) => data.profit),
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 1,
       },
       {
         label: "Asset Loss",
-        data: AssetData.map((data) => data.assetLoss),
+        data: assets.map((data) => data.loss),
         backgroundColor: ["rgba(54, 162, 235, 0.2)"],
         borderColor: ["rgba(54, 162, 235, 1)"],
         borderWidth: 1,
@@ -39,8 +53,12 @@ function LineChart() {
   };
 
   return (
-    <div className="Line-container">
-      <Line className="Line" data={assetData} options={chartOptions} />
+    <div className='Line-container'>
+      <Line
+        className='Line'
+        data={Assets}
+        options={chartOptions}
+      />
     </div>
   );
 }

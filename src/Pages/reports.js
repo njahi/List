@@ -5,15 +5,17 @@ import LineChart from "../components/LinearChart";
 function reports() {
   return (
     <>
-      <div className="header">
+      <div className='header'>
         <h1
-          className="h1"
+          className='h1'
           style={{ backgroundColor: "grey", textTransform: "uppercase" }}>
           Analytics and Reports
         </h1>
       </div>
-      <div className="chart" style={{ display: "flex" }}>
-        <BarChart style={{}} />
+      <div
+        className='chart'
+        style={{ display: "flex" }}>
+        <BarChart />
         <LineChart />
       </div>
     </>

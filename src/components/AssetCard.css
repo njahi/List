@@ -1,6 +1,8 @@
 .product-card {
   height: 100%;
   background-color: lightblue;
+  border: 2px;
+  border-radius: 25px;
 }
 .product-details {
   padding: 1rem;
@@ -15,4 +17,8 @@
   font-size: 1.1rem;
 }
 .product-image {
+  width: 100%;
+  aspect-ratio: 1;
+  align-self: start;
+  border-radius: 25px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import "./AssetCard.css";
+import DetailButton from "./DetailButton";
 
 function ProductCard() {
   const [assets, setAssets] = useState([]);
@@ -42,7 +43,7 @@ function ProductCard() {
                 <Card.Text className='product-value'>
                   ${product.value}
                 </Card.Text>
-                <button>Details</button>
+                <DetailButton />
               </Card.Body>
             </Card>
           </Col>

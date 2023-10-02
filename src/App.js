@@ -10,20 +10,46 @@ import documentation from "./Pages/documentation";
 import inventorymanagement from "./Pages/inventorymanagement";
 import settings from "./Pages/settings";
 import Navbar from "./components/Navbar";
+
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className='app'>
         <Navbar />
         <Routes>
-          <Route path="/" exact Component={home} />
-          <Route path="/about" Component={about} />
-          <Route path="/service" Component={service} />
-          <Route path="/asset" Component={asset} />
-          <Route path="/reports" Component={reports} />
-          <Route path="/documentation" Component={documentation} />
-          <Route path="/inventorymanagement" Component={inventorymanagement} />
-          <Route path="/settings" Component={settings} />
+          <Route
+            path='/'
+            exact
+            Component={home}
+          />
+          <Route
+            path='/about'
+            Component={about}
+          />
+          <Route
+            path='/service'
+            Component={service}
+          />
+          <Route
+            path='/asset'
+            Component={asset}
+          />
+          <Route
+            path='/reports'
+            Component={reports}
+          />
+          <Route
+            path='/documentation'
+            Component={documentation}
+          />
+          <Route
+            path='/inventorymanagement'
+            Component={inventorymanagement}
+          />
+          <Route
+            path='/settings'
+            Component={settings}
+          />
         </Routes>
       </div>
     </Router>

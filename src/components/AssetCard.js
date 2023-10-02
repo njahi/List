@@ -23,20 +23,26 @@ function ProductCard() {
 
   return (
     <div>
-      <Row xs={1} md={4} className="g-4">
+      <Row
+        xs={1}
+        md={4}
+        className='g-4'>
         {assets.map((product) => (
-          <Col align="center">
-            <Card key={product.id} className="product-card">
+          <Col align='center'>
+            <Card
+              key={product.id}
+              className='product-card'>
               <Card.Img
                 src={product.imageUrl}
                 alt={product.name}
-                className="product-image"
+                className='product-image'
               />
-              <Card.Body className="product-details">
-                <Card.Title className="product-name">{product.name}</Card.Title>
-                <Card.Text className="product-value">
+              <Card.Body className='product-details'>
+                <Card.Title className='product-name'>{product.name}</Card.Title>
+                <Card.Text className='product-value'>
                   ${product.value}
                 </Card.Text>
+                <button>Details</button>
               </Card.Body>
             </Card>
           </Col>

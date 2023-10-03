@@ -98,6 +98,26 @@ app.get("/api/asset", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+// Get a specific asset by ID
+app.get("/api/asset/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+
+  try {
+    const asset = await prisma.asset.findUnique({
+      where: { id: id },
+    });
+
+    if (!asset) {
+      return res.status(404).json({ error: "Asset not found" });
+    }
+
+    res.status(200).json(asset);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 // Start the server
 app.listen(5000, () => {

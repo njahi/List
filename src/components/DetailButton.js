@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { PopUp } from "./PopUp";
 
-export default function DetailButton() {
+export default function DetailButton({ id }) {
+  console.log(id);
+
   const [show, setShow] = useState(false);
   function handleShow() {
     setShow(true);
@@ -17,27 +20,11 @@ export default function DetailButton() {
         onClick={handleShow}>
         Details
       </Button>
-
-      <Modal
+      <PopUp
+        onClose={handleClose}
         show={show}
-        onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant='secondary'
-            onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            variant='primary'
-            onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        id={id}
+      />
     </>
   );
 }

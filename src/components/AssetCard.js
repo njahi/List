@@ -43,7 +43,7 @@ function ProductCard() {
                 <Card.Text className='product-value'>
                   ${product.value}
                 </Card.Text>
-                <DetailButton />
+                <DetailButton id={product?.id} />
               </Card.Body>
             </Card>
           </Col>

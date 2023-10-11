@@ -8,7 +8,7 @@ export function PopUp({ show, onClose, id }) {
       const response = await fetch(`http://localhost:5000/api/asset/${id}`);
 
       const data = await response.json();
-      console.log(data);
+
       setAssets(data);
     } catch (error) {
       console.error("Error fetching assets:", error);
@@ -17,7 +17,7 @@ export function PopUp({ show, onClose, id }) {
 
   useEffect(() => {
     fetchAssets();
-  });
+  }, []);
   return (
     <Modal
       show={show}
@@ -33,6 +33,12 @@ export function PopUp({ show, onClose, id }) {
             </div>
             <div>
               <label>Asset Value: {assets.value}</label>
+            </div>
+            <div>
+              <label>Year of purchase: {assets.year}</label>
+            </div>
+            <div>
+              <label>Status: </label>
             </div>
           </div>
         )}

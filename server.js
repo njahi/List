@@ -2,10 +2,12 @@ const express = require("express");
 const debug = require("debug")("server");
 const app = express();
 const cors = require("cors");
+const crypto = require("crypto");
 const { PrismaClient } = require("@prisma/client");
+const jwt = require("jsonwebtoken");
 
 const prisma = new PrismaClient();
-
+const SECRET_KEY = crypto.randomBytes(32).toString("hex");
 app.use(express.json({ limit: "10mb" }));
 app.use(
   cors({
@@ -14,6 +16,9 @@ app.use(
     allowedHeaders: "Content-Type, Authorization",
   })
 );
+const generateToken = (user) => {
+  return jwt.sign(user, SECRET_KEY, { expiresIn: "1h" });
+};
 
 // Add a new asset
 app.post("/api/asset", async (req, res) => {
@@ -40,6 +45,18 @@ app.post("/api/asset", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+// admin login
+app.post("/api/login", async (req, res) => {
+  const { email, password } = req.body;
+  if (email === "njahigatinu@gmail.com" && password === "9256") {
+    const token = generateToken({ email });
+    const redirectUrl = "./Pages/home";
+    console.log(redirectUrl);
+    res.status(200).json({ token, redirectUrl });
+  } else {
+    res.status(401).json({ error: "Invalid credentials" });
   }
 });
 
@@ -101,7 +118,6 @@ app.get("/api/asset", async (req, res) => {
 // Get a specific asset by ID
 app.get("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
 
   try {
     const asset = await prisma.asset.findUnique({

@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import login from "./Pages/login";
 import home from "./Pages/home";
 import about from "./Pages/about";
 import service from "./Pages/service";
@@ -20,8 +21,14 @@ function App() {
           <Route
             path='/'
             exact
+            Component={login}
+          />
+          <Route
+            path='/home'
+            exact
             Component={home}
           />
+
           <Route
             path='/about'
             Component={about}

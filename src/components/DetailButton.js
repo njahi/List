@@ -3,8 +3,6 @@ import { Button } from "react-bootstrap";
 import { PopUp } from "./PopUp";
 
 export default function DetailButton({ id }) {
-  console.log(id);
-
   const [show, setShow] = useState(false);
   function handleShow() {
     setShow(true);

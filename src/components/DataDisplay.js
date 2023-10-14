@@ -26,7 +26,11 @@ function DataDisplay() {
   }, []);
 
   return (
-    <Table striped bordered hover variant="dark">
+    <Table
+      striped
+      bordered
+      hover
+      variant='dark'>
       <thead>
         <tr>
           <th>Name</th>

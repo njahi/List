@@ -32,43 +32,52 @@ function ProductCard() {
   }, []);
 
   return (
-    <div>
+    <>
       {isLoading && <Loader />}
       {!isLoading && !error && (
-        <Row
-          xs={1}
-          md={4}
-          className='g-4'>
-          {assets.map((product) => (
-            <Col align='center'>
-              <Card
-                key={product.id}
-                className='product-card'>
-                <Card.Img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className='product-image'
-                />
-                <Card.Body className='product-details'>
-                  <Card.Title className='product-name'>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text className='product-value'>
-                    ${product.value}
-                  </Card.Text>
-                  <DetailButton id={product?.id} />
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        <div>
+          <Row
+            xs={1}
+            md={4}
+            className='g-4'>
+            {assets.map((product) => (
+              <Col align='center'>
+                <Card
+                  key={product.id}
+                  className='product-card'>
+                  <Card.Img
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className='product-image'
+                  />
+                  <Card.Body className='product-details'>
+                    <Card.Title className='product-name'>
+                      {product.name}
+                    </Card.Title>
+                    <Card.Text className='product-value'>
+                      ${product.value}
+                    </Card.Text>
+                    <DetailButton id={product?.id} />
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
       )}
       {error && (
-        <p>
-          <span>⛔</span> Error
+        <p
+          style={{
+            fontSize: "2.5rem",
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            textTransform: "uppercase",
+            marginTop: "150px",
+          }}>
+          <span>⛔</span> Error encounterd
         </p>
       )}
-    </div>
+    </>
   );
 }
 

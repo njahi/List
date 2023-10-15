@@ -33,9 +33,8 @@ function ProductCard() {
 
   return (
     <div>
-      {isLoading && !error ? (
-        <Loader />
-      ) : (
+      {isLoading && <Loader />}
+      {!isLoading && !error && (
         <Row
           xs={1}
           md={4}
@@ -63,6 +62,11 @@ function ProductCard() {
             </Col>
           ))}
         </Row>
+      )}
+      {error && (
+        <p>
+          <span>⛔</span> Error
+        </p>
       )}
     </div>
   );

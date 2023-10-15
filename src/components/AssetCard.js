@@ -8,16 +8,20 @@ import Loader from "./Loader";
 function ProductCard() {
   const [assets, setAssets] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   // Function to fetch assets from the server
   const fetchAssets = async () => {
     setIsLoading(true);
     try {
       const response = await fetch("http://localhost:5000/api/asset");
+      if (!response.ok)
+        throw new Error("Something went wrong with fetching assets");
       const data = await response.json();
       setAssets(data);
     } catch (error) {
-      console.error("Error fetching assets:", error);
+      console.error(error.message);
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -29,7 +33,7 @@ function ProductCard() {
 
   return (
     <div>
-      {isLoading ? (
+      {isLoading && !error ? (
         <Loader />
       ) : (
         <Row

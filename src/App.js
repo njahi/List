@@ -11,55 +11,68 @@ import documentation from "./Pages/documentation";
 import inventorymanagement from "./Pages/inventorymanagement";
 import settings from "./Pages/settings";
 import Navbar from "./components/Navbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+  },
+});
 
 function App() {
   return (
-    <Router>
-      <div className='app'>
-        <Navbar />
-        <Routes>
-          <Route
-            path='/'
-            exact
-            Component={login}
-          />
-          <Route
-            path='/home'
-            exact
-            Component={home}
-          />
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <Router>
+        <div className='app'>
+          <Navbar />
+          <Routes>
+            <Route
+              path='/'
+              exact
+              Component={login}
+            />
+            <Route
+              path='/home'
+              exact
+              Component={home}
+            />
 
-          <Route
-            path='/about'
-            Component={about}
-          />
-          <Route
-            path='/service'
-            Component={service}
-          />
-          <Route
-            path='/asset'
-            Component={asset}
-          />
-          <Route
-            path='/reports'
-            Component={reports}
-          />
-          <Route
-            path='/documentation'
-            Component={documentation}
-          />
-          <Route
-            path='/inventorymanagement'
-            Component={inventorymanagement}
-          />
-          <Route
-            path='/settings'
-            Component={settings}
-          />
-        </Routes>
-      </div>
-    </Router>
+            <Route
+              path='/about'
+              Component={about}
+            />
+            <Route
+              path='/service'
+              Component={service}
+            />
+            <Route
+              path='/asset'
+              Component={asset}
+            />
+            <Route
+              path='/reports'
+              Component={reports}
+            />
+            <Route
+              path='/documentation'
+              Component={documentation}
+            />
+            <Route
+              path='/inventorymanagement'
+              Component={inventorymanagement}
+            />
+            <Route
+              path='/settings'
+              Component={settings}
+            />
+          </Routes>
+        </div>
+      </Router>
+    </QueryClientProvider>
   );
 }
 

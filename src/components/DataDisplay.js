@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import format from "date-fns/format";
+import { useAssets } from "../hooks/useAssets";
 
 export function formatDateTime(timestamp) {
   const fileDate = new Date(timestamp);
@@ -8,22 +8,14 @@ export function formatDateTime(timestamp) {
 }
 
 function DataDisplay() {
-  const [assets, setAssets] = useState([]);
+  const { assets, loadingAssets, error } = useAssets();
 
-  // Function to fetch assets from the server
-  const fetchAssets = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/asset");
-      const data = await response.json();
-      setAssets(data);
-    } catch (error) {
-      console.error("Error fetching assets:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchAssets();
-  }, []);
+  if (loadingAssets) {
+    return <h2>Loading</h2>;
+  }
+  if (error) {
+    console.log("error fetching data");
+  }
 
   return (
     <Table

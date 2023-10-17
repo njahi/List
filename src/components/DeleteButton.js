@@ -3,6 +3,7 @@ import { useDeleteAsset } from "../hooks/useDeleteAsset";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function DeleteButton({ id }) {
+  console.log(id);
   const { deletingAsset, isDeletingAsset, error } = useDeleteAsset();
   function handleDelete() {
     deletingAsset(id);

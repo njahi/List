@@ -26,7 +26,7 @@ export async function createAsset(newData) {
     throw new Error(error);
   }
 }
-export async function deleteAsset({ id }) {
+export async function deleteAsset(id) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
       method: "DELETE",

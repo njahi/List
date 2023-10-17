@@ -6,10 +6,10 @@ export async function getAssets() {
 
     return data;
   } catch (error) {
-    throw new Error(error?.message);
+    throw new Error("error encounterd");
   }
 }
-export async function createAset(newData) {
+export async function createAsset(newData) {
   try {
     const response = await fetch("http://localhost:5000/api/asset", {
       method: "POST",
@@ -17,6 +17,19 @@ export async function createAset(newData) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+export async function deleteAsset({ id }) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
+      method: "DELETE",
     });
 
     if (!response.ok) {

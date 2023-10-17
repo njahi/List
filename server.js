@@ -93,9 +93,10 @@ app.delete("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
-    await prisma.asset.delete({
-      where: { id: parseInt(id) },
+    const deletedAsset = await prisma.asset.delete({
+      where: { id: id },
     });
+    debug("deleted asset:", deletedAsset);
 
     res.sendStatus(200);
   } catch (error) {

@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createAsset } from "../services/apiAssets";
+import { deleteAsset } from "../services/apiAssets";
 
-export function useCreateAsset() {
+export function useDeleteAsset() {
   const queryClient = useQueryClient();
   const {
-    mutate: creatingAsset,
-    isLoading: isCreatingAsset,
+    mutate: deletingAsset,
+    isLoading: isDeletingAsset,
     error,
   } = useMutation({
-    mutationFn: createAsset,
+    mutationFn: deleteAsset,
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["assets"],
@@ -18,5 +18,5 @@ export function useCreateAsset() {
       console.log(error);
     },
   });
-  return { creatingAsset, isCreatingAsset, error };
+  return { deletingAsset, isDeletingAsset, error };
 }

@@ -14,6 +14,7 @@ import settings from "./Pages/settings";
 import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Dashboard from "./components/Dashboard";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,9 +29,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Router>
+        <Navbar />
+        {/* <Dashboard /> */}
         <Toaster />
         <div className='app'>
-          <Navbar />
           <Routes>
             <Route
               path='/'

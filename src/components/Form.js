@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { format } from "date-fns";
 import "./Form.css";
 import { useCreateAsset } from "../hooks/useCreateAsset";
+import toast from "react-hot-toast";
 function Form({ onSubmit }) {
   const { register, handleSubmit, reset } = useForm();
   const { creatingAsset, isCreatingAsset, error } = useCreateAsset();
@@ -27,7 +28,9 @@ function Form({ onSubmit }) {
       },
     });
     if (error) {
-      console.log("something went wrong");
+      toast.error("something went wrong");
+    } else {
+      toast.success("Asset added ");
     }
   }
 

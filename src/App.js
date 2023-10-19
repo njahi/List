@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import login from "./Pages/login";
 import home from "./Pages/home";
 import about from "./Pages/about";
@@ -27,6 +28,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Router>
+        <Toaster />
         <div className='app'>
           <Navbar />
           <Routes>

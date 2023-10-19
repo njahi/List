@@ -11,8 +11,6 @@ function Form({ onSubmit }) {
   const [imageUrl, setImageUrl] = useState("");
 
   function onSubmitForm(data) {
-    console.log(data);
-
     const formattedDateCreated = format(dateCreated, "yyyy-MM-dd'T'HH:mm:ss");
     const formattedDateUpdated = format(dateUpdated, "yyyy-MM-dd'T'HH:mm:ss");
 

@@ -7,7 +7,14 @@ function Asset() {
   };
   return (
     <div>
-      <h1>Welcome</h1>
+      <div
+        style={{
+          textTransform: "uppercase",
+          backgroundColor: "grey",
+          textAlign: "center",
+        }}>
+        <h1>Entry</h1>
+      </div>
       <Form onSubmit={handleFormSubmit} />
       <DataDisplay />
     </div>

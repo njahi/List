@@ -46,6 +46,13 @@ function Form({ onSubmit }) {
   };
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
+      <h1
+        style={{
+          textUnderlinePosition: "under",
+          textDecoration: "underline",
+        }}>
+        Entry Form
+      </h1>
       <div>
         <label>Name:</label>
         <input
@@ -53,49 +60,71 @@ function Form({ onSubmit }) {
           placeholder='Asset Name'
         />
       </div>
-      <input
-        {...register("value", { required: true })}
-        placeholder='Value'
-      />
-      <input
-        {...register("profit", { required: true })}
-        placeholder='Profit'
-      />
-      <input
-        {...register("loss", { required: true })}
-        placeholder='Loss'
-      />
-      <input
-        {...register("year", { required: true })}
-        placeholder='Year'
-      />
-      <input
-        {...register("dateCreated", { required: true })}
-        type='datetime-local'
-        value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
-        onChange={(e) => setDateCreated(new Date(e.target.value))}
-        placeholder='dateCreated'
-        readOnly
-      />
-      <input
-        {...register("dateUpdated", { required: true })}
-        type='datetime-local'
-        value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
-        onChange={(e) => setDateUpdated(new Date(e.target.value))}
-        placeholder='dateUpdated'
-        readOnly
-      />
-      <input
-        type='file'
-        accept='image/*'
-        onChange={handleImageUpload}
-        placeholder='image'
-      />
-      <button
-        type='submit'
-        disabled={isCreatingAsset}>
-        {isCreatingAsset ? "Loading" : "Add Asset"}
-      </button>
+      <div>
+        <label>Value:</label>
+        <input
+          {...register("value", { required: true })}
+          placeholder='Value'
+        />
+      </div>
+      <div>
+        <label>Profit:</label>
+        <input
+          {...register("profit", { required: true })}
+          placeholder='Profit'
+        />
+      </div>
+      <div>
+        <label>Loss:</label>
+        <input
+          {...register("loss", { required: true })}
+          placeholder='Loss'
+        />
+      </div>
+      <div>
+        <label>Year:</label>
+        <input
+          {...register("year", { required: true })}
+          placeholder='Year'
+        />
+      </div>
+      <div>
+        <label>DateCreated:</label>
+        <input
+          {...register("dateCreated", { required: true })}
+          type='datetime-local'
+          value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
+          onChange={(e) => setDateCreated(new Date(e.target.value))}
+          placeholder='dateCreated'
+          readOnly
+        />
+      </div>
+      <div>
+        <label>DateUpdated:</label>
+        <input
+          {...register("dateUpdated", { required: true })}
+          type='datetime-local'
+          value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
+          onChange={(e) => setDateUpdated(new Date(e.target.value))}
+          placeholder='dateUpdated'
+          readOnly
+        />
+      </div>
+      <div>
+        <input
+          type='file'
+          accept='image/*'
+          onChange={handleImageUpload}
+          placeholder='image'
+        />
+      </div>
+      <div>
+        <button
+          type='submit'
+          disabled={isCreatingAsset}>
+          {isCreatingAsset ? "Loading" : "Add Asset"}
+        </button>
+      </div>
     </form>
   );
 }

@@ -1,8 +1,10 @@
 form {
-  display: flex;
+  display: flow-root;
   flex-direction: column;
   margin-bottom: 10px;
   background-color: darkolivegreen;
+  justify-content: center;
+  text-align: center;
 }
 
 label {

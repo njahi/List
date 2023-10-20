@@ -13,7 +13,7 @@ function Asset() {
           backgroundColor: "grey",
           textAlign: "center",
         }}>
-        <h1>Entry</h1>
+        <h1>WELCOME</h1>
       </div>
       <Form onSubmit={handleFormSubmit} />
       <DataDisplay />

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 function Navbar() {
   return (
@@ -11,11 +12,7 @@ function Navbar() {
           alt='icon'
           className='Dash-image'
         />
-        <input
-          className='search'
-          type='text'
-          placeholder='Search Asset...'
-        />
+        <Search />
 
         <ul>
           <li>

@@ -53,7 +53,6 @@ app.post("/api/login", async (req, res) => {
   if (email === "njahigatinu@gmail.com" && password === "9256") {
     const token = generateToken({ email });
     const redirectUrl = "./Pages/home";
-    console.log(redirectUrl);
     res.status(200).json({ token, redirectUrl });
   } else {
     res.status(401).json({ error: "Invalid credentials" });

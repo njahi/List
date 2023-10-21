@@ -29,10 +29,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
+
       <Router>
         <Navbar />
-        {/* <Dashboard /> */}
 
+        {/* <Dashboard /> */}
         <Toaster />
         <SearchProvider>
           <div className='app'>

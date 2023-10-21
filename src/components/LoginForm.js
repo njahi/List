@@ -1,6 +1,7 @@
 import React from "react";
 import "./LoginForm.css";
 import { useForm, Controller } from "react-hook-form";
+import toast, { ToastIcon } from "react-hot-toast";
 
 const LoginForm = () => {
   const { control, handleSubmit } = useForm();
@@ -16,11 +17,14 @@ const LoginForm = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Login failed");
+        toast.error("Login failed");
       }
 
       const responseData = await response.json();
-      console.log("Login successful:", responseData);
+      console.log(responseData);
+      ToastIcon.success("login okay", {
+        position: "top-center",
+      });
       // Handle the response, e.g., save JWT token to local storage
 
       // store JWT to the session
@@ -29,7 +33,7 @@ const LoginForm = () => {
       // Handle redirect
       window.location.assign("/home");
     } catch (error) {
-      console.error("Login failed:", error.message);
+      toast.error("Login failed:", error.message);
     }
   };
 

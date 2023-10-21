@@ -1,6 +1,7 @@
 import React from "react";
 import BarChart from "../components/BarChart";
 import LineChart from "../components/LinearChart";
+import Statistics from "../components/Statistics";
 
 function reports() {
   return (
@@ -14,9 +15,16 @@ function reports() {
       </div>
       <div
         className='chart'
-        style={{ display: "flex" }}>
-        <BarChart />
-        <LineChart />
+        style={{ display: "flex", justifyContent: "space-around" }}>
+        <div>
+          <BarChart />
+        </div>
+        <div>
+          <LineChart />
+        </div>
+        <div>
+          <Statistics />
+        </div>
       </div>
     </>
   );

@@ -31,7 +31,7 @@ function Loginn() {
       // Handle the response, e.g., save JWT token to local storage
 
       // store JWT to the session
-      sessionStorage.setItem("Token", "123456");
+      sessionStorage.setItem("Token", responseData.token);
 
       // Handle redirect
       window.location.assign("/home");
@@ -47,6 +47,9 @@ function Loginn() {
         remember: true,
       }}
       onFinish={handleSubmit(onFinish)}>
+      <div>
+        <h3 style={{ textDecorationLine: "underline" }}>Admin Login</h3>
+      </div>
       <Form.Item
         name='email'
         rules={[

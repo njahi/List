@@ -16,8 +16,8 @@ export default function Statistics() {
       <Col>
         {assets.map((product) => (
           <Statistic
-            tittle={product.profit}
-            precision={2}
+            key={product.id}
+            title={product.value}
           />
         ))}
       </Col>

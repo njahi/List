@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { format } from "date-fns";
 import "./EntryForm.css";
-import { Form, Button, Input, label } from "antd";
+import { Form, Button, Input } from "antd";
 import { useCreateAsset } from "../hooks/useCreateAsset";
 import toast from "react-hot-toast";
 function EntryForm({ onSubmit }) {

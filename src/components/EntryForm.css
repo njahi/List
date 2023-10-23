@@ -1,9 +1,10 @@
-form {
-  display: flow-root;
+Form {
+  display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  background-color: darkolivegreen;
+  background-color: lightslategray;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -11,11 +12,14 @@ label {
   margin-bottom: 0px;
 }
 
-input {
+Input {
   padding: 5px;
   margin-bottom: 10px;
 }
 
 button {
   padding: 5px 10px;
+}
+Form.Item {
+  padding: 80px;
 }

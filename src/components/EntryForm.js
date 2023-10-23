@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { format } from "date-fns";
 import "./EntryForm.css";
+import { Form, Button, Input, label } from "antd";
 import { useCreateAsset } from "../hooks/useCreateAsset";
 import toast from "react-hot-toast";
 function EntryForm({ onSubmit }) {
@@ -45,7 +46,13 @@ function EntryForm({ onSubmit }) {
     reader.readAsDataURL(file);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)}>
+    <Form
+      name='entry_form'
+      className='entry'
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={handleSubmit(onSubmitForm)}>
       <h1
         style={{
           textUnderlinePosition: "under",
@@ -53,44 +60,45 @@ function EntryForm({ onSubmit }) {
         }}>
         Entry Form
       </h1>
-      <div>
+
+      <Form.Item>
         <label>Name:</label>
-        <input
+        <Input
           {...register("name", { required: true })}
           placeholder='Asset Name'
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>Value:</label>
-        <input
+        <Input
           {...register("value", { required: true })}
           placeholder='Value'
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>Profit:</label>
-        <input
+        <Input
           {...register("profit", { required: true })}
           placeholder='Profit'
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>Loss:</label>
-        <input
+        <Input
           {...register("loss", { required: true })}
           placeholder='Loss'
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>Year:</label>
-        <input
+        <Input
           {...register("year", { required: true })}
           placeholder='Year'
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>DateCreated:</label>
-        <input
+        <Input
           {...register("dateCreated", { required: true })}
           type='datetime-local'
           value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
@@ -98,10 +106,10 @@ function EntryForm({ onSubmit }) {
           placeholder='dateCreated'
           readOnly
         />
-      </div>
-      <div>
+      </Form.Item>
+      <Form.Item>
         <label>DateUpdated:</label>
-        <input
+        <Input
           {...register("dateUpdated", { required: true })}
           type='datetime-local'
           value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
@@ -109,23 +117,24 @@ function EntryForm({ onSubmit }) {
           placeholder='dateUpdated'
           readOnly
         />
-      </div>
-      <div>
-        <input
+      </Form.Item>
+      <Form.Item>
+        <Input
           type='file'
           accept='image/*'
           onChange={handleImageUpload}
           placeholder='image'
         />
-      </div>
-      <div>
-        <button
-          type='submit'
+      </Form.Item>
+      <Form.Item>
+        <Button
+          typeof='primary'
+          htmlType='submit'
           disabled={isCreatingAsset}>
           {isCreatingAsset ? "Loading" : "Add Asset"}
-        </button>
-      </div>
-    </form>
+        </Button>
+      </Form.Item>
+    </Form>
   );
 }
 export default EntryForm;

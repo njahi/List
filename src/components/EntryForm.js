@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { format } from "date-fns";
-import "./Form.css";
+import "./EntryForm.css";
 import { useCreateAsset } from "../hooks/useCreateAsset";
 import toast from "react-hot-toast";
-function Form({ onSubmit }) {
+function EntryForm({ onSubmit }) {
   const { register, handleSubmit, reset } = useForm();
   const { creatingAsset, isCreatingAsset, error } = useCreateAsset();
   const [dateCreated, setDateCreated] = useState(new Date());
@@ -128,4 +128,4 @@ function Form({ onSubmit }) {
     </form>
   );
 }
-export default Form;
+export default EntryForm;

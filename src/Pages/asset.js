@@ -1,6 +1,6 @@
 import React from "react";
-import Form from "../components/Form";
 import DataDisplay from "../components/DataDisplay";
+import EntryForm from "../components/EntryForm";
 function Asset() {
   const handleFormSubmit = (newAsset) => {
     console.log("New Asset:", newAsset);
@@ -15,7 +15,7 @@ function Asset() {
         }}>
         <h1>WELCOME</h1>
       </div>
-      <Form onSubmit={handleFormSubmit} />
+      <EntryForm onSubmit={handleFormSubmit} />
       <DataDisplay />
     </div>
   );

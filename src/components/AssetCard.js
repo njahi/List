@@ -4,6 +4,7 @@ import "./AssetCard.css";
 import DetailButton from "./DetailButton";
 import { useAssets } from "../hooks/useAssets";
 import DeleteButton from "./DeleteButton";
+import EditButton from "./EditButton";
 
 function ProductCard() {
   const { assets, loadingAssets, error } = useAssets();
@@ -62,8 +63,15 @@ function ProductCard() {
                       ${product.value}
                     </Card.Text>
                     <div style={{ display: "flex" }}>
-                      <DetailButton id={product?.id} />
-                      <DeleteButton id={product?.id} />
+                      <div>
+                        <DetailButton id={product?.id} />
+                      </div>
+                      <div>
+                        <EditButton id={product?.id} />
+                      </div>
+                      <div>
+                        <DeleteButton id={product?.id} />
+                      </div>
                     </div>
                   </Card.Body>
                 </Card>

@@ -22,7 +22,7 @@ export default function DeleteButton({ id }) {
   return (
     <button
       onClick={handleDelete}
-      style={{ marginLeft: "150px" }}>
+      style={{ marginLeft: "100px" }}>
       <FaTrashAlt />
     </button>
   );

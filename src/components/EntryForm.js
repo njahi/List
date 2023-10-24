@@ -128,7 +128,7 @@ function EntryForm({ onSubmit }) {
       </Form.Item>
       <Form.Item>
         <Button
-          typeof='primary'
+          type='primary'
           htmlType='submit'
           disabled={isCreatingAsset}>
           {isCreatingAsset ? "Loading" : "Add Asset"}

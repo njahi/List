@@ -62,11 +62,14 @@ function ProductCard() {
                     <Card.Text className='product-value'>
                       ${product.value}
                     </Card.Text>
-                    <div style={{ display: "flex" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                      }}>
                       <div>
                         <DetailButton id={product?.id} />
                       </div>
-                      <div>
+                      <div style={{ marginLeft: "25px" }}>
                         <EditButton id={product?.id} />
                       </div>
                       <div>

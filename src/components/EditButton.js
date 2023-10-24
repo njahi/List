@@ -1,12 +1,6 @@
 import React from "react";
-import { Button } from "antd";
+import { Button } from "react-bootstrap";
 
 export default function EditButton() {
-  return (
-    <Button
-      type='primary'
-      htmlType='submit'>
-      Edit
-    </Button>
-  );
+  return <Button variant='primary'>Edit</Button>;
 }

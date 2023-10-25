@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { format } from "date-fns";
 import "./EntryForm.css";
-import { Form, Button, Input } from "antd";
+import { Form, Button } from "antd";
 import { useCreateAsset } from "../hooks/useCreateAsset";
 import toast from "react-hot-toast";
 function EntryForm({ onSubmit }) {
@@ -12,7 +12,7 @@ function EntryForm({ onSubmit }) {
   const [dateUpdated, setDateUpdated] = useState(new Date());
   const [imageUrl, setImageUrl] = useState("");
 
-  function onSubmitForm(data) {
+  function onFinish(data) {
     const formattedDateCreated = format(dateCreated, "yyyy-MM-dd'T'HH:mm:ss");
     const formattedDateUpdated = format(dateUpdated, "yyyy-MM-dd'T'HH:mm:ss");
 
@@ -52,7 +52,7 @@ function EntryForm({ onSubmit }) {
       initialValues={{
         remember: true,
       }}
-      onFinish={handleSubmit(onSubmitForm)}>
+      onFinish={handleSubmit(onFinish)}>
       <h1
         style={{
           textUnderlinePosition: "under",
@@ -63,42 +63,42 @@ function EntryForm({ onSubmit }) {
 
       <Form.Item>
         <label>Name:</label>
-        <Input
+        <input
           {...register("name", { required: true })}
           placeholder='Asset Name'
         />
       </Form.Item>
       <Form.Item>
         <label>Value:</label>
-        <Input
+        <input
           {...register("value", { required: true })}
           placeholder='Value'
         />
       </Form.Item>
       <Form.Item>
         <label>Profit:</label>
-        <Input
+        <input
           {...register("profit", { required: true })}
           placeholder='Profit'
         />
       </Form.Item>
       <Form.Item>
         <label>Loss:</label>
-        <Input
+        <input
           {...register("loss", { required: true })}
           placeholder='Loss'
         />
       </Form.Item>
       <Form.Item>
         <label>Year:</label>
-        <Input
+        <input
           {...register("year", { required: true })}
           placeholder='Year'
         />
       </Form.Item>
       <Form.Item>
         <label>DateCreated:</label>
-        <Input
+        <input
           {...register("dateCreated", { required: true })}
           type='datetime-local'
           value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
@@ -109,7 +109,7 @@ function EntryForm({ onSubmit }) {
       </Form.Item>
       <Form.Item>
         <label>DateUpdated:</label>
-        <Input
+        <input
           {...register("dateUpdated", { required: true })}
           type='datetime-local'
           value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
@@ -119,7 +119,7 @@ function EntryForm({ onSubmit }) {
         />
       </Form.Item>
       <Form.Item>
-        <Input
+        <input
           type='file'
           accept='image/*'
           onChange={handleImageUpload}

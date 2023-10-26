@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-export function PopUp({ show, onClose, id }) {
+export function PopUp1({ show, onClose, id }) {
   const [assets, setAssets] = useState([]);
   const fetchAssets = async () => {
     try {

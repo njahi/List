@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { PopUp } from "./PopUp";
+import { PopUp1 } from "./PopUp1";
 
 export default function DetailButton({ id }) {
   const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ export default function DetailButton({ id }) {
         onClick={handleShow}>
         Details
       </Button>
-      <PopUp
+      <PopUp1
         onClose={handleClose}
         show={show}
         id={id}

@@ -13,7 +13,7 @@ function Loginn() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${"token"}`,
+          Authorization: `Bearer ${"responseData.token"}`,
         },
         body: JSON.stringify(data),
       });
@@ -32,7 +32,7 @@ function Loginn() {
       // Handle the response, e.g., save JWT token to local storage
 
       // store JWT to the session
-      sessionStorage.setItem("t");
+      sessionStorage.setItem("Token", "responseData.token");
 
       // Handle redirect
       window.location.assign("/home");

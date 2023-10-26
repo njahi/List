@@ -10,7 +10,7 @@ function Loginn() {
   const onFinish = async (data) => {
     try {
       const response = await fetch("http://localhost:5000/api/login", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${"token"}`,
@@ -32,7 +32,7 @@ function Loginn() {
       // Handle the response, e.g., save JWT token to local storage
 
       // store JWT to the session
-      sessionStorage.setItem("Token", "token");
+      sessionStorage.setItem("t");
 
       // Handle redirect
       window.location.assign("/home");

@@ -49,11 +49,6 @@ export function PopUp1({ show, onClose, id }) {
           onClick={onClose}>
           Close
         </Button>
-        <Button
-          variant='primary'
-          onClick={onClose}>
-          Save Changes
-        </Button>
       </Modal.Footer>
     </Modal>
   );

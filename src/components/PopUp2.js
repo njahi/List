@@ -1,6 +1,6 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
-import { Form, Input, InputNumber } from "antd";
+import { Modal } from "react-bootstrap";
+import { Form, Input, InputNumber, Button } from "antd";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -52,14 +52,16 @@ export function PopUp2({ show, onClose, id }) {
               placeholder='Asset Value'
             />
           </Form.Item>
+          <Form.Item>
+            <Button
+              type='primary'
+              htmlType='submit'>
+              save changes
+            </Button>
+          </Form.Item>
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          variant='primary'
-          onClick={onSubmit}>
-          Save Changes
-        </Button>
         <Button
           variant='secondary'
           onClick={onClose}>

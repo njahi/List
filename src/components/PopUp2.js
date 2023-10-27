@@ -1,29 +1,27 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import { useEditAsset } from "../hooks/useEditAsset";
 import { Form, Input, InputNumber, Button } from "antd";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 export function PopUp2({ show, onClose, id }) {
   const { handleSubmit } = useForm();
-  const onSubmit = async (data) => {
-    try {
-      const response = await fetch(`/api/asset/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (!response) {
-        toast.error("could not update");
-      } else {
-        toast.success("Updated succesfully");
-      }
-    } catch (error) {
-      console.log("error", error.message);
-    }
-  };
+  const { editingAsset, isEditingAsset, error } = useEditAsset();
+  function handleEdit() {
+    editingAsset(id);
+    toast.success("asset updated", {
+      position: "top-center",
+      toastId: id,
+    });
+  }
+
+  if (isEditingAsset) {
+    return <p>Editing...</p>;
+  }
+  if (error) {
+    console.log(error);
+  }
   return (
     <Modal
       show={show}
@@ -32,7 +30,7 @@ export function PopUp2({ show, onClose, id }) {
         <Modal.Title>Edit Assets</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onFinish={handleSubmit(onSubmit)}>
+        <Form onFinish={handleSubmit(handleEdit)}>
           <Form.Item
             name='name'
             label='Asset Name'

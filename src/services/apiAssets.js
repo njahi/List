@@ -39,3 +39,16 @@ export async function deleteAsset(id) {
     throw new Error(error);
   }
 }
+export async function editAsset(id) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
+      method: "PUT",
+    });
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}

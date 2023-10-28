@@ -39,10 +39,14 @@ export async function deleteAsset(id) {
     throw new Error(error);
   }
 }
-export async function editAsset(id) {
+export async function editAsset(id, data) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
 
     if (!response.ok) {

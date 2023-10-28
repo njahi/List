@@ -53,6 +53,7 @@ export function PopUp2({ show, onClose, id }) {
       </Modal.Body>
       <Modal.Footer>
         <Button
+          disabled={isEditingAsset}
           variant='secondary'
           onClick={onClose}>
           Close

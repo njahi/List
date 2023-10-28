@@ -1,15 +1,19 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useEditAsset } from "../hooks/useEditAsset";
-import { Form, Input, InputNumber, Button } from "antd";
+import { Form, Button } from "antd";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 export function PopUp2({ show, onClose, id }) {
-  const { handleSubmit } = useForm();
+  const { handleSubmit, register, reset } = useForm();
   const { editingAsset, isEditingAsset, error } = useEditAsset();
   function handleEdit() {
-    editingAsset(id);
+    editingAsset(id, {
+      onSettled: () => {
+        reset();
+      },
+    });
     toast.success("asset updated", {
       position: "top-center",
       toastId: id,
@@ -31,23 +35,11 @@ export function PopUp2({ show, onClose, id }) {
       </Modal.Header>
       <Modal.Body>
         <Form onFinish={handleSubmit(handleEdit)}>
-          <Form.Item
-            name='name'
-            label='Asset Name'
-            rules={[
-              { required: true, message: "Please enter the asset name" },
-            ]}>
-            <Input placeholder='Asset Name' />
-          </Form.Item>
-          <Form.Item
-            name='value'
-            label='Asset Value'
-            rules={[
-              { required: true, message: "Please enter the asset value" },
-            ]}>
-            <InputNumber
-              style={{ width: "100%" }}
-              placeholder='Asset Value'
+          <Form.Item>
+            <label>Name:</label>
+            <input
+              {...register("name", { required: true })}
+              placeholder='Asset Name'
             />
           </Form.Item>
           <Form.Item>

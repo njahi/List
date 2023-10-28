@@ -42,7 +42,7 @@ export async function deleteAsset(id) {
 export async function editAsset(id) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
-      method: "PUT",
+      method: "PATCH",
     });
 
     if (!response.ok) {

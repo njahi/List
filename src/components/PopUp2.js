@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 export function PopUp2({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
   const { editingAsset, isEditingAsset, error } = useEditAsset();
-  function handleEdit() {
+  function handleEdit(data) {
     editingAsset(id, {
       onSettled: () => {
         reset();

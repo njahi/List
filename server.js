@@ -12,7 +12,7 @@ app.use(express.json({ limit: "10mb" }));
 app.use(
   cors({
     origin: "http://localhost:3000",
-    methods: "POST, GET, PUT, DELETE",
+    methods: "POST, GET, PUT, DELETE, PATCH",
     allowedHeaders: "Content-Type, Authorization",
   })
 );
@@ -60,7 +60,7 @@ app.post("/api/login", async (req, res) => {
 });
 
 // Update an existing asset
-app.put("/api/asset/:id", async (req, res) => {
+app.patch("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
   console.log(name);

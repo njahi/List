@@ -63,7 +63,7 @@ app.post("/api/login", async (req, res) => {
 // Update an existing asset
 app.patch("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
-  const { name } = req.body;
+  var { name } = req.body;
   console.log(name);
 
   try {

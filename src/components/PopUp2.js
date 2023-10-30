@@ -34,7 +34,13 @@ export function PopUp2({ show, onClose, id }) {
         <Modal.Title>Edit Assets</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onFinish={handleSubmit(handleEdit)}>
+        <Form
+          name='entry_form'
+          className='entry'
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={handleSubmit(handleEdit)}>
           <Form.Item>
             <label>Name:</label>
             <input

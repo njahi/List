@@ -63,8 +63,7 @@ app.post("/api/login", async (req, res) => {
 // Update an existing asset
 app.patch("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
-  var { name } = req.body;
-  console.log(name);
+  const { name } = req.body;
 
   try {
     const updatedAsset = await prisma.asset.update({

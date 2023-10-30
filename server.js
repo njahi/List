@@ -5,7 +5,6 @@ const cors = require("cors");
 const crypto = require("crypto");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
-const bodyParser = require("body-parser");
 
 const prisma = new PrismaClient();
 const SECRET_KEY = crypto.randomBytes(32).toString("hex");

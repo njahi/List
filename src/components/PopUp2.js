@@ -9,11 +9,14 @@ export function PopUp2({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
   const { editingAsset, isEditingAsset, error } = useEditAsset();
   function handleEdit(data) {
-    editingAsset(id, data, {
-      onSettled: () => {
-        reset();
-      },
-    });
+    editingAsset(
+      { id, data },
+      {
+        onSettled: () => {
+          reset();
+        },
+      }
+    );
     toast.success("asset updated", {
       position: "top-center",
       toastId: id,

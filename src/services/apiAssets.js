@@ -42,15 +42,16 @@ export async function deleteAsset(id) {
 export async function editAsset(id, data) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
-
     if (!response.ok) {
       throw new Error("Something went wrong");
+    } else {
+      return data;
     }
   } catch (error) {
     throw new Error(error);

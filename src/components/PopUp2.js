@@ -9,7 +9,6 @@ export function PopUp2({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
   const { editingAsset, isEditingAsset, error } = useEditAsset();
   function handleEdit(data) {
-    console.log(data);
     editingAsset(id, data, {
       onSettled: () => {
         reset();

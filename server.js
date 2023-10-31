@@ -61,21 +61,20 @@ app.post("/api/login", async (req, res) => {
 });
 
 // Update an existing asset
-app.patch("/api/asset/:id", async (req, res) => {
+app.put("/api/asset/:id", async (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
-  console.log("Name:", name);
 
   try {
-    const updatedAsset = await prisma.asset.update({
+    const asset = await prisma.asset.update({
       where: { id: id },
       data: {
         name: name,
       },
     });
-    debug("Updated asset:", updatedAsset);
+    debug("Updated asset:", asset);
 
-    res.status(200).json(updatedAsset);
+    res.status(200).json(asset);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });

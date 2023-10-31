@@ -52,6 +52,13 @@ export function PopUp2({ show, onClose, id }) {
             />
           </Form.Item>
           <Form.Item>
+            <label>Value:</label>
+            <input
+              {...register("value", { required: true })}
+              placeholder='Asset Value'
+            />
+          </Form.Item>
+          <Form.Item>
             <Button
               type='primary'
               htmlType='submit'>

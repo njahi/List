@@ -39,7 +39,7 @@ export async function deleteAsset(id) {
     throw new Error(error);
   }
 }
-export async function editAsset(id, data) {
+export async function editAsset({ id, data }) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {
       method: "PUT",

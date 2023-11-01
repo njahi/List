@@ -38,7 +38,9 @@ export function PopUp1({ show, onClose, id }) {
               <label>Year of purchase: {assets.year}</label>
             </div>
             <div>
-              <label>Status: </label>
+              <label>
+                Status:{assets.status === true ? "Not Sold" : "Sold"}
+              </label>
             </div>
           </div>
         )}

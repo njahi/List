@@ -7,7 +7,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.11",
-    "@prisma/client": "^5.3.1",
+    "@prisma/client": "^5.5.2",
     "@table-library/react-table-library": "^4.1.4",
     "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.36.1",
@@ -67,7 +67,7 @@
     ]
   },
   "devDependencies": {
-    "prisma": "^5.3.1",
+    "prisma": "^5.5.2",
     "react-router-dom": "^6.11.2"
   }
 }

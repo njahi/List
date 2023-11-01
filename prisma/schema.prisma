@@ -20,6 +20,7 @@ model Asset {
   imageUrl    String
   dateCreated DateTime @default(now())
   dateUpdated DateTime @default(now())
+  isSold      Boolean  @default(false)
 }
 
 model User {

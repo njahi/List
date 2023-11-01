@@ -59,6 +59,24 @@ app.post("/api/login", async (req, res) => {
     res.status(401).json({ error: "Invalid credentials" });
   }
 });
+// admin sign up before login
+app.post("/api/user", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await prisma.user.create({
+      data: {
+        email: email,
+        password: parseInt(password),
+      },
+    });
+    debug("new user:", user);
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 // Update an existing asset
 app.put("/api/asset/:id", async (req, res) => {

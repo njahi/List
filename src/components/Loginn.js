@@ -32,7 +32,7 @@ function Loginn() {
       // Handle the response, e.g., save JWT token to local storage
 
       // store JWT to the session
-      sessionStorage.setItem("Token", "responseData.token");
+      sessionStorage.setItem("Token:", "token");
 
       // Handle redirect
       window.location.assign("/home");

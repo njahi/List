@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 function RegForm() {
   const { handleSubmit } = useForm();
 
-  const onFinish = async (data) => {
+  const onRegister = async (data) => {
     try {
       const response = await fetch("http://localhost:5000/api/user", {
         method: "POST",
@@ -46,7 +46,7 @@ function RegForm() {
       initialValues={{
         remember: true,
       }}
-      onFinish={handleSubmit(onFinish)}>
+      onFinish={handleSubmit(onRegister)}>
       <div>
         <h3 style={{ textDecorationLine: "underline" }}>Sign Up</h3>
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import register from "./Pages/register";
 import login from "./Pages/login";
 import home from "./Pages/home";
 import about from "./Pages/about";
@@ -40,6 +41,11 @@ function App() {
             <Routes>
               <Route
                 path='/'
+                exact
+                Component={register}
+              />
+              <Route
+                path='/login'
                 exact
                 Component={login}
               />

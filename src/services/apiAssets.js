@@ -57,3 +57,20 @@ export async function editAsset({ id, data }) {
     throw new Error(error);
   }
 }
+export async function getUser(data) {
+  try {
+    const response = await fetch("http://localhost:5000/api/asset", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}

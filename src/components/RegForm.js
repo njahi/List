@@ -1,44 +1,62 @@
 import React from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form } from "antd";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import { useAddUser } from "../hooks/useAddUser";
 
 function RegForm() {
-  const { handleSubmit } = useForm();
-
-  const onRegister = async (data) => {
-    try {
-      const response = await fetch("http://localhost:5000/api/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        toast.error("wrong credentials");
-      } else {
-        toast.success("login succesful", {
-          position: "top-center",
-        });
-      }
-
-      const responseData = await response.json();
-      console.log(responseData);
-
-      // Handle the response, e.g., save JWT token to local storage
-
-      // store JWT to the session
-      //   sessionStorage.setItem("Token:", "token");
-
-      // Handle redirect
-      window.location.assign("/login");
-    } catch (error) {
-      toast.error("Login failed:", error.message);
+  const { handleSubmit, reset, register } = useForm();
+  const { addingUser, isAddingUser, error } = useAddUser();
+  function onAdd(data) {
+    console.log(data);
+    addingUser(data, {
+      onSettled: () => {
+        reset();
+      },
+    });
+    if (isAddingUser) {
+      return <p>Adding...</p>;
     }
-  };
+    if (error) {
+      toast.error("error");
+    } else {
+      toast.success("User Registered");
+      window.location.assign("/login");
+    }
+  }
+
+  //   const onRegister = async (data) => {
+  //     try {
+  //       const response = await fetch("http://localhost:5000/api/user", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(data),
+  //       });
+
+  //       if (!response.ok) {
+  //         toast.error("wrong credentials");
+  //       } else {
+  //         toast.success("login succesful", {
+  //           position: "top-center",
+  //         });
+  //       }
+
+  //       const responseData = await response.json();
+  //       console.log(responseData);
+
+  //       // Handle the response, e.g., save JWT token to local storage
+
+  //       // store JWT to the session
+  //       //   sessionStorage.setItem("Token:", "token");
+
+  //       // Handle redirect
+  //       window.location.assign("/login");
+  //     } catch (error) {
+  //       toast.error("Login failed:", error.message);
+  //     }
+  //   };
   return (
     <Form
       name='normal_login'
@@ -46,37 +64,26 @@ function RegForm() {
       initialValues={{
         remember: true,
       }}
-      onFinish={handleSubmit(onRegister)}>
+      onFinish={handleSubmit(onAdd)}>
       <div>
         <h3 style={{ textDecorationLine: "underline" }}>Sign Up</h3>
       </div>
-      <Form.Item
-        name='email'
-        rules={[
-          {
-            required: true,
-            message: "Please input your Email!",
-          },
-        ]}>
-        <Input
-          prefix={<UserOutlined className='site-form-item-icon' />}
-          placeholder='Email'
-        />
-      </Form.Item>
-      <Form.Item
-        name='password'
-        rules={[
-          {
-            required: true,
-            message: "Please input your Password!",
-          },
-        ]}>
-        <Input
-          prefix={<LockOutlined className='site-form-item-icon' />}
-          type='password'
-          placeholder='Password'
-        />
-      </Form.Item>
+      <div>
+        <Form.Item>
+          <label>Email:</label>
+          <input
+            {...register("email", { required: true })}
+            placeholder='Email'
+          />
+        </Form.Item>
+        <Form.Item>
+          <label>Pass:</label>
+          <input
+            {...register("password", { required: true })}
+            placeholder='Password'
+          />
+        </Form.Item>
+      </div>
       <Form.Item>
         <Form.Item
           name='remember'

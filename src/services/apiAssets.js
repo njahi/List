@@ -57,10 +57,11 @@ export async function editAsset({ id, data }) {
     throw new Error(error);
   }
 }
-export async function getUser(data) {
+export async function addUser(data) {
+  console.log(data);
   try {
-    const response = await fetch("http://localhost:5000/api/asset", {
-      method: "GET",
+    const response = await fetch("http://localhost:5000/api/user", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },

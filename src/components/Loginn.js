@@ -1,11 +1,11 @@
 import React from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+// import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form } from "antd";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import "./Loginn.css";
 function Loginn() {
-  const { handleSubmit } = useForm();
+  const { handleSubmit, register } = useForm();
 
   const onFinish = async (data) => {
     try {
@@ -51,30 +51,17 @@ function Loginn() {
       <div>
         <h3 style={{ textDecorationLine: "underline" }}>Admin Login</h3>
       </div>
-      <Form.Item
-        name='email'
-        rules={[
-          {
-            required: true,
-            message: "Please input your Email!",
-          },
-        ]}>
-        <Input
-          prefix={<UserOutlined className='site-form-item-icon' />}
+      <Form.Item>
+        <label>Email:</label>
+        <input
+          {...register("email", { required: true })}
           placeholder='Email'
         />
       </Form.Item>
-      <Form.Item
-        name='password'
-        rules={[
-          {
-            required: true,
-            message: "Please input your Password!",
-          },
-        ]}>
-        <Input
-          prefix={<LockOutlined className='site-form-item-icon' />}
-          type='password'
+      <Form.Item>
+        <label>Pass:</label>
+        <input
+          {...register("password", { required: true })}
           placeholder='Password'
         />
       </Form.Item>

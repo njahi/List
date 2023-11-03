@@ -94,19 +94,23 @@ function RegForm() {
         </Form.Item>
       </Form.Item>
       <div style={{ display: " flex" }}>
-        <Form.Item>
-          <Button
-            type='primary'
-            htmlType='submit'
-            className='login-form-button'>
-            Sign Up
-          </Button>
-        </Form.Item>
-        <Form.Item>
-          <Link to='/login'>
-            <Button type='primary'>Login</Button>
-          </Link>
-        </Form.Item>
+        <div>
+          <Form.Item>
+            <Button
+              type='primary'
+              htmlType='submit'
+              className='login-form-button'>
+              Sign Up
+            </Button>
+          </Form.Item>
+        </div>
+        <div style={{ marginLeft: "25px" }}>
+          <Form.Item>
+            <Link to='/login'>
+              <Button type='primary'>Login</Button>
+            </Link>
+          </Form.Item>
+        </div>
       </div>
     </Form>
   );

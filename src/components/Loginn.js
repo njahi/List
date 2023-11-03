@@ -13,7 +13,6 @@ function Loginn() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${"responseData.token"}`,
         },
         body: JSON.stringify(data),
       });

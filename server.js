@@ -51,6 +51,7 @@ app.post("/api/asset", async (req, res) => {
 // admin login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
+  console.log(email, password);
   const token = generateToken({ email });
   const redirectUrl = "./Pages/home";
   if (email === "njahigatinu@gmail.com" && password === "9256") {

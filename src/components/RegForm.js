@@ -3,6 +3,7 @@ import { Button, Checkbox, Form } from "antd";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useAddUser } from "../hooks/useAddUser";
+import { Link } from "react-router-dom";
 
 function RegForm() {
   const { handleSubmit, reset, register } = useForm();
@@ -92,15 +93,21 @@ function RegForm() {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
       </Form.Item>
-
-      <Form.Item>
-        <Button
-          type='primary'
-          htmlType='submit'
-          className='login-form-button'>
-          Register
-        </Button>
-      </Form.Item>
+      <div style={{ display: " flex" }}>
+        <Form.Item>
+          <Button
+            type='primary'
+            htmlType='submit'
+            className='login-form-button'>
+            Sign Up
+          </Button>
+        </Form.Item>
+        <Form.Item>
+          <Link to='/login'>
+            <Button type='primary'>Login</Button>
+          </Link>
+        </Form.Item>
+      </div>
     </Form>
   );
 }

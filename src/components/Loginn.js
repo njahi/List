@@ -8,6 +8,7 @@ function Loginn() {
   const { handleSubmit, register } = useForm();
 
   const onFinish = async (data) => {
+    console.log(data);
     try {
       const response = await fetch("http://localhost:5000/api/login", {
         method: "POST",
@@ -19,10 +20,12 @@ function Loginn() {
 
       if (!response.ok) {
         toast.error("wrong credentials");
+        window.location.assign("/login");
       } else {
         toast.success("login succesful", {
           position: "top-center",
         });
+        window.location.assign("/home");
       }
 
       const responseData = await response.json();
@@ -35,7 +38,6 @@ function Loginn() {
       sessionStorage.setItem("Token", token);
 
       // Handle redirect
-      window.location.assign("/home");
     } catch (error) {
       toast.error("Login failed:", error.message);
     }

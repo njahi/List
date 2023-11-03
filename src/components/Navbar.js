@@ -7,11 +7,18 @@ function Navbar() {
   return (
     <>
       <nav className='nav-bar'>
-        <img
-          src='./Furniture.jpg'
-          alt='icon'
-          className='Dash-image'
-        />
+        <div className='logo'>
+          <div>
+            <img
+              src='./Furniture.jpg'
+              alt='icon'
+              className='Dash-image'
+            />
+          </div>
+          <div style={{ marginTop: "35px", fontFamily: "fantasy" }}>
+            <h2>WEKA</h2>
+          </div>
+        </div>
         <Search />
 
         <ul>

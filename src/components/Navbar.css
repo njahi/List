@@ -1,3 +1,7 @@
+.logo {
+  display: flex;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;

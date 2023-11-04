@@ -20,7 +20,7 @@ function Loginn() {
 
       if (!response.ok) {
         toast.error("wrong credentials");
-        window.location.assign("/login");
+        window.location.assign("/");
       } else {
         toast.success("login succesful", {
           position: "top-center",

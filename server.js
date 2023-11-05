@@ -79,7 +79,7 @@ app.use(
 );
 
 const generateToken = (user) => {
-  return jwt.sign(user, SECRET_KEY, { expiresIn: "7d" });
+  return jwt.sign(user, SECRET_KEY, { expiresIn: "7 days" });
 };
 
 // Add a new asset
@@ -121,13 +121,15 @@ app.post("/api/login", async (req, res) => {
 
     if (!user) return res.status(409).json({ message: "User not registered" });
 
-    const isEqual = await bcrypt.compare(user.password, password);
+    const isEqual = await bcrypt.compareSync(password, user.password);
 
-    if (!isEqual)
+    if (!isEqual) {
       return res.status(401).json({ message: "Invalid Email or Password" });
-    const token = generateToken(user.email);
-    const redirectUrl = "./Pages/home";
-    res.status(200).json({ token, redirectUrl });
+    } else {
+      // Add expiresIn
+      const token = jwt.sign(user.email, SECRET_KEY);
+      res.status(200).json({ token });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -173,24 +175,24 @@ app.post("/api/user", async (req, res) => {
 
     if (userExists) {
       res.status(409).json({ message: "User already exists" });
-    }
-
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create the user account
-    const user = await prisma.user.create({
-      data: {
-        name: name,
-        email: email,
-        password: hashedPassword,
-      },
-    });
-
-    if (user) {
-      res.status(201).json("User registered succesfully");
     } else {
-      res.status(500).json("Failed to register user");
+      // Hash password
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      // Create the user account
+      const user = await prisma.user.create({
+        data: {
+          name: name,
+          email: email,
+          password: hashedPassword,
+        },
+      });
+
+      if (user) {
+        res.status(201).json("User registered succesfully");
+      } else {
+        res.status(500).json("Failed to register user");
+      }
     }
   } catch (error) {
     console.log(error);

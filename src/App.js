@@ -40,7 +40,7 @@ function App() {
           <div className='app'>
             <Routes>
               <Route
-                path='/'
+                path='/register'
                 exact
                 Component={register}
               />

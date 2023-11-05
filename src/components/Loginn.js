@@ -4,8 +4,10 @@ import { Button, Checkbox, Form } from "antd";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import "./Loginn.css";
+import { useNavigate } from "react-router-dom";
 function Loginn() {
   const { handleSubmit, register } = useForm();
+  const navigate = useNavigate();
 
   const onFinish = async (data) => {
     console.log(data);
@@ -18,14 +20,16 @@ function Loginn() {
         body: JSON.stringify(data),
       });
 
+      console.log(response);
       if (!response.ok) {
         toast.error("wrong credentials");
-        window.location.assign("/");
+
+        navigate("/register");
       } else {
         toast.success("login succesful", {
           position: "top-center",
         });
-        window.location.assign("/home");
+        navigate("/home");
       }
 
       const responseData = await response.json();

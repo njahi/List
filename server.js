@@ -5,6 +5,7 @@ const cors = require("cors");
 const crypto = require("crypto");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var session = require("express-session");
@@ -78,7 +79,7 @@ app.use(
 );
 
 const generateToken = (user) => {
-  return jwt.sign(user, SECRET_KEY, { expiresIn: "1h" });
+  return jwt.sign(user, SECRET_KEY, { expiresIn: "7d" });
 };
 
 // Add a new asset
@@ -111,14 +112,36 @@ app.post("/api/asset", passport.authenticate("session"), async (req, res) => {
 // admin login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
-  const token = generateToken({ email });
-  const redirectUrl = "./Pages/home";
-  if (email === "njahigatinu@gmail.com" && password === "9256") {
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        email: email,
+      },
+    });
+
+    if (!user) return res.status(409).json({ message: "User not registered" });
+
+    const isEqual = await bcrypt.compare(user.password, password);
+
+    if (!isEqual)
+      return res.status(401).json({ message: "Invalid Email or Password" });
+    const token = generateToken(user.email);
+    const redirectUrl = "./Pages/home";
     res.status(200).json({ token, redirectUrl });
-  } else {
-    res.status(401).json({ error: "Invalid credentials" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
+
+  // const { email, password } = req.body;
+  // console.log(email, password);
+  // const token = generateToken({ email });
+  // const redirectUrl = "./Pages/home";
+  // if (email === "njahigatinu@gmail.com" && password === "9256") {
+  //   res.status(200).json({ token, redirectUrl });
+  // } else {
+  //   res.status(401).json({ error: "Invalid credentials" });
+  // }
 });
 // admin sign up before login
 // app.post("/api/user", async (req, res) => {
@@ -139,28 +162,38 @@ app.post("/api/login", async (req, res) => {
 //   }
 // });
 app.post("/api/user", async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
   try {
-    // Hash the provided password
-    const salt = crypto.randomBytes(16).toString("hex");
-    const hashedPassword = crypto
-      .pbkdf2Sync(password, salt, 310000, 32, "sha256")
-      .toString("hex");
-
-    // Create the user with the hashed password
-    const user = await prisma.user.create({
-      data: {
-        email,
-        password: hashedPassword, // Store the hashed password
+    const userExists = await prisma.user.findUnique({
+      where: {
+        email: email,
       },
     });
 
-    debug("new user:", user);
+    if (userExists) {
+      res.status(409).json({ message: "User already exists" });
+    }
 
-    res.status(200).json(user);
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create the user account
+    const user = await prisma.user.create({
+      data: {
+        name: name,
+        email: email,
+        password: hashedPassword,
+      },
+    });
+
+    if (user) {
+      res.status(201).json("User registered succesfully");
+    } else {
+      res.status(500).json("Failed to register user");
+    }
   } catch (error) {
-    console.error(error);
+    console.log(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });

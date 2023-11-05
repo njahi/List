@@ -16,7 +16,7 @@ function Navbar() {
             />
           </div>
           <div style={{ marginTop: "35px", fontFamily: "fantasy" }}>
-            <h2>WEKA</h2>
+            <h2>..WEKA</h2>
           </div>
         </div>
         <Search />

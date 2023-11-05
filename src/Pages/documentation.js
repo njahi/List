@@ -1,6 +1,20 @@
 import React from "react";
 
 function documentation() {
-  return <h1>This documentation fr fr</h1>;
+  return (
+    <>
+      <div style={{ backgroundColor: "grey" }}>
+        <h2
+          style={{
+            fontFamily: "fantasy",
+            textTransform: "uppercase",
+            fontSize: "2.5rem",
+            textAlign: "center",
+          }}>
+          Documentation
+        </h2>
+      </div>
+    </>
+  );
 }
 export default documentation;

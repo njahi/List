@@ -78,9 +78,9 @@ app.use(
   })
 );
 
-const generateToken = (user) => {
-  return jwt.sign(user, SECRET_KEY, { expiresIn: "7 days" });
-};
+// const generateToken = (user) => {
+//   return jwt.sign(user, SECRET_KEY, { expiresIn: "7 days" });
+// };
 
 // Add a new asset
 app.post("/api/asset", passport.authenticate("session"), async (req, res) => {

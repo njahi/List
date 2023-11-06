@@ -24,7 +24,7 @@ function Loginn() {
       if (!response.ok) {
         toast.error("wrong credentials");
 
-        navigate("/register");
+        navigate("/");
       } else {
         toast.success("login succesful", {
           position: "top-center",

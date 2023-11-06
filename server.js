@@ -128,7 +128,8 @@ app.post("/api/login", async (req, res) => {
     } else {
       // Add expiresIn
       const token = jwt.sign(user.email, SECRET_KEY);
-      res.status(200).json({ token });
+      const { name, email } = user;
+      res.status(200).json({ token, name, email });
     }
   } catch (error) {
     console.log(error);

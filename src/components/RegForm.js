@@ -60,16 +60,13 @@ function RegForm() {
   //   };
   return (
     <>
-      {/* <Form
+      <Form
         name='normal_login'
         className='login-form'
         initialValues={{
           remember: true,
         }}
-        onFinish={handleSubmit(onAdd)}
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        style={{ maxWidth: 600 }}>
+        onFinish={handleSubmit(onAdd)}>
         <div>
           <h3 style={{ textDecorationLine: "underline" }}>Sign Up</h3>
         </div>
@@ -91,7 +88,7 @@ function RegForm() {
             />
           </Form.Item>
           <Form.Item>
-            <label>Password:</label>
+            <label>Pass:</label>
             <input
               {...register("password", { required: true })}
               placeholder='Password'
@@ -125,8 +122,8 @@ function RegForm() {
             </Form.Item>
           </div>
         </div>
-      </Form> */}
-      <form onSubmit={handleSubmit(onAdd)}>
+      </Form>
+      {/* <form onSubmit={handleSubmit(onAdd)}>
         <div style={{ position: "relative" }}>
           <label>Name</label>
           <input
@@ -180,7 +177,7 @@ function RegForm() {
             Signup
           </button>
         </div>
-      </form>
+      </form> */}
     </>
   );
 }

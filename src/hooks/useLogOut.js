@@ -15,7 +15,7 @@ export function useLogOut() {
   } = useMutation({
     mutationFn: logOut,
     onSuccess: () => {
-      toast.success("Logged out successfull");
+      toast.success("Logged out successful");
       navigate("/login");
     },
     onError: () => {

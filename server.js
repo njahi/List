@@ -112,6 +112,7 @@ app.post("/api/asset", passport.authenticate("session"), async (req, res) => {
 // admin login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
+
   try {
     const user = await prisma.user.findUnique({
       where: {

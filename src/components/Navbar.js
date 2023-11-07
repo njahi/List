@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import LogOut from "./LogOut";
 
 function Navbar() {
   return (
@@ -32,6 +33,9 @@ function Navbar() {
             <Link to='/service'>Service</Link>
           </li>
         </ul>
+        <div>
+          <LogOut />
+        </div>
       </nav>
     </>
   );

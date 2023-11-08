@@ -2,7 +2,6 @@ import React from "react";
 import { useLogOut } from "../hooks/useLogOut";
 import { AiOutlineLogout } from "react-icons/ai";
 import toast from "react-hot-toast";
-import { Dropdown, Button } from "antd";
 
 export default function LogOut() {
   const { logOutAPI, isLoading, error } = useLogOut();
@@ -17,12 +16,8 @@ export default function LogOut() {
   }
 
   return (
-    <>
-      <Dropdown placement='below'>
-        <Button onClick={handleLogOut}>
-          <AiOutlineLogout />
-        </Button>
-      </Dropdown>
-    </>
+    <button onClick={handleLogOut}>
+      <AiOutlineLogout />
+    </button>
   );
 }

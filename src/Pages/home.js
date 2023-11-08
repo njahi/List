@@ -28,11 +28,13 @@ function home() {
               👨🏿‍💻 Welcome to your World 🦦
             </h1>
           </div>
-          <img
-            src='Furniture.jpg'
-            alt='home'
-            style={{ height: "35.3rem", width: "75.8rem" }}
-          />
+          <div>
+            <img
+              src='dreamer.png'
+              alt='home'
+              style={{ height: "35.3rem", width: "75.8rem" }}
+            />
+          </div>
         </div>
       </div>
     </>

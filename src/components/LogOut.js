@@ -1,7 +1,8 @@
 import React from "react";
 import { useLogOut } from "../hooks/useLogOut";
-import { AiOutlineLogout } from "react-icons/ai";
 import toast from "react-hot-toast";
+import { Popover } from "@headlessui/react";
+import { BiSolidUserCircle } from "react-icons/bi";
 
 export default function LogOut() {
   const { logOutAPI, isLoading, error } = useLogOut();
@@ -16,8 +17,15 @@ export default function LogOut() {
   }
 
   return (
-    <button onClick={handleLogOut}>
-      <AiOutlineLogout />
-    </button>
+    <Popover>
+      <Popover.Button>
+        <BiSolidUserCircle size={40} />
+      </Popover.Button>
+      <Popover.Panel>
+        <div>
+          <button onClick={handleLogOut}>log Out</button>
+        </div>
+      </Popover.Panel>
+    </Popover>
   );
 }

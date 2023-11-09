@@ -8,7 +8,8 @@ function home() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          marginRight: "100px",
+
+          backgroundColor: "lightskyblue",
         }}>
         <Dashboard />
         <div>
@@ -28,12 +29,32 @@ function home() {
               👨🏿‍💻 Welcome to your World 🦦
             </h1>
           </div>
-          <div>
-            <img
-              src='dreamer.png'
-              alt='home'
-              style={{ height: "35.3rem", width: "75.8rem" }}
-            />
+
+          <div style={{ display: "flex" }}>
+            <div>
+              <img
+                src='life.jpg'
+                alt='home'
+                style={{ height: "250px", width: "380px" }}
+              />
+            </div>
+            <div
+              style={{
+                backgroundColor: "lightcoral",
+                marginBottom: "250px",
+                width: "140px",
+              }}>
+              <p
+                style={{
+                  font: "inherit",
+                  fontFamily: "sans-serif",
+                  fontStyle: "oblique",
+                }}>
+                Weka is an all in one sytem that intergrates many
+                functionalities to secure our assets and also track sales of the
+                assets{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>

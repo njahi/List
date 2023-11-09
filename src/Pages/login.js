@@ -8,8 +8,9 @@ export default function Login() {
         style={{
           display: "flex",
           backgroundColor: "lightseagreen",
+          height: "35.5rem",
         }}>
-        <div style={{ marginLeft: "20px" }}>
+        <div style={{ marginLeft: "80px", justifyContent: "center" }}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='362.52377'
@@ -163,7 +164,7 @@ export default function Login() {
             </g>
           </svg>
         </div>
-        <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center", marginRight: "50px" }}>
           <Loginn />
         </div>
       </div>

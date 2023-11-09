@@ -23,7 +23,11 @@ export default function LogOut() {
       </Popover.Button>
       <Popover.Panel>
         <div>
-          <button onClick={handleLogOut}>log Out</button>
+          <button
+            onClick={handleLogOut}
+            style={{ borderRadius: "0.5rem" }}>
+            log Out
+          </button>
         </div>
       </Popover.Panel>
     </Popover>

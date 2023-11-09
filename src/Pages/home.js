@@ -12,6 +12,7 @@ function home() {
           backgroundColor: "lightskyblue",
         }}>
         <Dashboard />
+
         <div>
           <div
             style={{
@@ -43,6 +44,7 @@ function home() {
                 backgroundColor: "lightcoral",
                 marginBottom: "250px",
                 width: "140px",
+                height: "280px",
               }}>
               <p
                 style={{
@@ -54,6 +56,22 @@ function home() {
                 functionalities to secure our assets and also track sales of the
                 assets{" "}
               </p>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginLeft: "400px",
+                  marginBottom: "300px",
+                }}>
+                <img
+                  src='lay.avif'
+                  alt='home'
+                  style={{
+                    height: "250px",
+                    width: "380px",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,11 @@ import Loginn from "../components/Loginn";
 export default function Login() {
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div
+        style={{
+          display: "flex",
+          backgroundColor: "lightseagreen",
+        }}>
         <div style={{ marginLeft: "20px" }}>
           <svg
             xmlns='http://www.w3.org/2000/svg'

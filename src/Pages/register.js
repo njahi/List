@@ -12,8 +12,8 @@ export default function register() {
       <div style={{ marginLeft: "80px", justifyContent: "center" }}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          width='362.52377'
-          height='438.18799'
+          width='751.57'
+          height='539.42'
           viewBox='0 0 751.57 539.42'>
           <path
             d='m19.9,538.23c0,.66.53,1.19,1.19,1.19h729.29c.66,0,1.19-.53,1.19-1.19s-.53-1.19-1.19-1.19H21.09c-.66,0-1.19.53-1.19,1.19Z'

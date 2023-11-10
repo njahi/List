@@ -30,37 +30,44 @@ function home() {
               👨🏿‍💻 Welcome to your World 🦦
             </h1>
           </div>
-
           <div style={{ display: "flex" }}>
-            <div>
-              <img
-                src='life.jpg'
-                alt='home'
-                style={{ height: "250px", width: "380px" }}
-              />
+            <div style={{ display: "flex" }}>
+              <div>
+                <img
+                  src='life.jpg'
+                  alt='home'
+                  style={{ height: "250px", width: "380px" }}
+                />
+              </div>
+              <div
+                style={{
+                  backgroundColor: "lightcoral",
+                  marginBottom: "250px",
+                  width: "140px",
+                  height: "280px",
+                }}>
+                <p
+                  style={{
+                    font: "inherit",
+                    fontFamily: "sans-serif",
+                    fontStyle: "oblique",
+                  }}>
+                  Weka is an all in one sytem that intergrates many
+                  functionalities to secure our assets and also track sales of
+                  the assets{" "}
+                </p>
+              </div>
             </div>
             <div
               style={{
-                backgroundColor: "lightcoral",
-                marginBottom: "250px",
-                width: "140px",
-                height: "280px",
+                display: "flex",
+                marginTop: "20px",
+                marginLeft: "70px",
               }}>
-              <p
-                style={{
-                  font: "inherit",
-                  fontFamily: "sans-serif",
-                  fontStyle: "oblique",
-                }}>
-                Weka is an all in one sytem that intergrates many
-                functionalities to secure our assets and also track sales of the
-                assets{" "}
-              </p>
               <div
                 style={{
-                  display: "flex",
                   justifyContent: "space-between",
-                  marginLeft: "400px",
+                  marginLeft: "100px",
                   marginBottom: "300px",
                 }}>
                 <img
@@ -71,6 +78,23 @@ function home() {
                     width: "380px",
                   }}
                 />
+              </div>
+              <div
+                style={{
+                  backgroundColor: "lightcoral",
+                  marginBottom: "10px",
+                  width: "140px",
+                  height: "280px",
+                }}>
+                <p
+                  style={{
+                    font: "inherit",
+                    fontFamily: "sans-serif",
+                    fontStyle: "oblique",
+                  }}>
+                  Explore your various assets and be aware of its standing
+                  value.Our pride is a safe Asset
+                </p>
               </div>
             </div>
           </div>

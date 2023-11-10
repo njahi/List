@@ -1,5 +1,6 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
+import { Card } from "react-bootstrap";
 
 function home() {
   return (
@@ -8,7 +9,6 @@ function home() {
         style={{
           display: "flex",
           justifyContent: "space-between",
-
           backgroundColor: "lightskyblue",
         }}>
         <Dashboard />
@@ -30,7 +30,12 @@ function home() {
               👨🏿‍💻 Welcome to your World 🦦
             </h1>
           </div>
-          <div style={{ display: "flex" }}>
+          <div
+            style={{
+              display: "grid",
+              justifyContent: "space-evenly",
+              gridTemplateColumns: "1fr 1fr",
+            }}>
             <div style={{ display: "flex" }}>
               <div>
                 <img
@@ -96,6 +101,41 @@ function home() {
                   value.Our pride is a safe Asset
                 </p>
               </div>
+            </div>
+            <div
+              style={{
+                marginBottom: "12rem",
+                justifyContent: "space-evenly",
+                display: "flex",
+                flexDirection: "row",
+              }}>
+              <Card
+                style={{
+                  width: "20.5rem",
+                  height: "100%",
+                  backgroundColor: "lightcoral",
+                  border: "2px",
+                  borderRadius: "25px",
+                }}>
+                <Card.Img
+                  src='track.jpg'
+                  alt='track'
+                  style={{
+                    width: "20.5rem",
+                    aspectRatio: "1",
+                    alignSelf: "start",
+                    borderRadius: "25px",
+                    height: "14.1rem",
+                  }}
+                />
+                <Card.Body>
+                  <Card.Title>Sales</Card.Title>
+                  <Card.Text>
+                    Track the sales of your assets by looking at the profits
+                    made from the assets owned
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </div>
           </div>
         </div>

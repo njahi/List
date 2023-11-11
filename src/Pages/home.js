@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout";
 
-function home() {
+export default function home() {
   return (
     <>
       <div
@@ -148,6 +148,7 @@ function home() {
               display: "flex",
               flexDirection: "row",
               marginRight: "300px",
+              maxWidth: "400rem",
             }}>
             <div>
               <h2>hey</h2>
@@ -158,4 +159,3 @@ function home() {
     </>
   );
 }
-export default home;

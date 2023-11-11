@@ -1,6 +1,7 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function home() {
   return (
@@ -132,6 +133,9 @@ function home() {
                   <Card.Text>
                     Track the sales of your assets by looking at the profits
                     made from the assets owned
+                    <div>
+                      <Link to='/reports'>See More</Link>
+                    </div>
                   </Card.Text>
                 </Card.Body>
               </Card>

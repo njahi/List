@@ -71,7 +71,6 @@ function home() {
               }}>
               <div
                 style={{
-                  justifyContent: "space-between",
                   marginLeft: "100px",
                   marginBottom: "300px",
                 }}>

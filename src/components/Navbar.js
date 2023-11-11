@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import LogOut from "./LogOut";
+import SideBar from "./SideBar";
 
 function Navbar() {
   return (
@@ -30,7 +31,7 @@ function Navbar() {
             <Link to='/about'>About</Link>
           </li>
           <li>
-            <Link to='/service'>Service</Link>
+            <SideBar />
           </li>
         </ul>
         <div>

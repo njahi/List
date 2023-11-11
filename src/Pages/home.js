@@ -13,7 +13,7 @@ export default function home() {
           justifyContent: "space-between",
           backgroundColor: "lightskyblue",
         }}>
-        <Dashboard />
+        {/* <Dashboard /> */}
 
         <div>
           <div
@@ -150,9 +150,11 @@ export default function home() {
               flexDirection: "row",
               margin: "3px",
               marginBottom: "0px",
+              height: "15rem",
+              borderRadius: "10px",
             }}>
             <div>
-              <h2>hey</h2>
+              <div></div>
             </div>
           </Footer>
         </div>

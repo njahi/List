@@ -142,13 +142,14 @@ export default function home() {
               </Card>
             </div>
           </div>
+
           <Footer
             style={{
               backgroundColor: "grey",
               display: "flex",
               flexDirection: "row",
-              marginRight: "300px",
-              maxWidth: "400rem",
+              margin: "3px",
+              marginBottom: "0px",
             }}>
             <div>
               <h2>hey</h2>

@@ -2,6 +2,7 @@ import React from "react";
 import Dashboard from "../components/Dashboard";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Footer } from "antd/es/layout/layout";
 
 function home() {
   return (
@@ -141,6 +142,17 @@ function home() {
               </Card>
             </div>
           </div>
+          <Footer
+            style={{
+              backgroundColor: "grey",
+              display: "flex",
+              flexDirection: "row",
+              marginRight: "300px",
+            }}>
+            <div>
+              <h2>hey</h2>
+            </div>
+          </Footer>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout";
 
@@ -105,81 +105,86 @@ export default function home() {
             </div>
           </div>
           <div style={{ display: "flex" }}>
-            <div
-              style={{
-                marginBottom: "12rem",
-                justifyContent: "space-evenly",
-                display: "flex",
-              }}>
-              <Card
+            <Row
+              xs={1}
+              md={2}
+              className='g-4'>
+              <Col
                 style={{
-                  width: "32.5rem",
-                  height: "120%",
-                  backgroundColor: "lightcoral",
-                  border: "2px",
-                  borderRadius: "25px",
+                  marginBottom: "12rem",
+                  justifyContent: "space-evenly",
+                  display: "flex",
                 }}>
-                <Card.Img
-                  src='growth.png'
-                  alt='track'
+                <Card
                   style={{
                     width: "32.5rem",
-                    aspectRatio: "1",
-                    alignSelf: "start",
+                    height: "120%",
+                    backgroundColor: "lightcoral",
+                    border: "2px",
                     borderRadius: "25px",
-                    height: "14.1rem",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title>Sales</Card.Title>
-                  <Card.Text>
-                    Track the sales of your assets by looking at the profits
-                    made from the assets owned
-                    <div>
-                      <Link to='/reports'>See More</Link>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div
-              style={{
-                marginBottom: "12rem",
-                justifyContent: "space-evenly",
-                display: "flex",
-              }}>
-              <Card
+                  }}>
+                  <Card.Img
+                    src='growth.png'
+                    alt='track'
+                    style={{
+                      width: "32.5rem",
+                      aspectRatio: "1",
+                      alignSelf: "start",
+                      borderRadius: "25px",
+                      height: "14.1rem",
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title>Sales</Card.Title>
+                    <Card.Text>
+                      Track the sales of your assets by looking at the profits
+                      made from the assets owned
+                      <div>
+                        <Link to='/reports'>See More</Link>
+                      </div>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col
                 style={{
-                  width: "32.5rem",
-                  height: "120%",
-                  backgroundColor: "lightcoral",
-                  border: "2px",
-                  borderRadius: "25px",
+                  marginBottom: "12rem",
+                  justifyContent: "space-evenly",
+                  display: "flex",
                 }}>
-                <Card.Img
-                  src='asset.avif'
-                  alt='track'
+                <Card
                   style={{
                     width: "32.5rem",
-                    aspectRatio: "1",
-                    alignSelf: "start",
+                    height: "120%",
+                    backgroundColor: "lightcoral",
+                    border: "2px",
                     borderRadius: "25px",
-                    height: "14.1rem",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title>Manage Assets</Card.Title>
-                  <Card.Text>
-                    Manage your Assets for ease of retrival for purfomance
-                    checking and also for ease of conducting analysis that help
-                    generate reports.
-                    <div>
-                      <Link to='/asset'>See More</Link>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
+                  }}>
+                  <Card.Img
+                    src='asset.avif'
+                    alt='track'
+                    style={{
+                      width: "32.5rem",
+                      aspectRatio: "1",
+                      alignSelf: "start",
+                      borderRadius: "25px",
+                      height: "14.1rem",
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title>Manage Assets</Card.Title>
+                    <Card.Text>
+                      Manage your Assets for ease of retrival for purfomance
+                      checking and also for ease of conducting analysis that
+                      help generate reports.
+                      <div>
+                        <Link to='/asset'>See More</Link>
+                      </div>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </div>
       </div>

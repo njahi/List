@@ -112,17 +112,17 @@ export default function home() {
               }}>
               <Card
                 style={{
-                  width: "20.5rem",
-                  height: "100%",
+                  width: "32.5rem",
+                  height: "120%",
                   backgroundColor: "lightcoral",
                   border: "2px",
                   borderRadius: "25px",
                 }}>
                 <Card.Img
-                  src='track.jpg'
+                  src='growth.png'
                   alt='track'
                   style={{
-                    width: "20.5rem",
+                    width: "32.5rem",
                     aspectRatio: "1",
                     alignSelf: "start",
                     borderRadius: "25px",

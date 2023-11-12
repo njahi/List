@@ -35,9 +35,8 @@ export default function home() {
           </div>
           <div
             style={{
-              display: "grid",
+              display: "flex",
               justifyContent: "space-evenly",
-              gridTemplateColumns: "1fr 1fr",
             }}>
             <div style={{ display: "flex" }}>
               <div>
@@ -104,6 +103,8 @@ export default function home() {
                 </p>
               </div>
             </div>
+          </div>
+          <div style={{ display: "flex" }}>
             <div
               style={{
                 marginBottom: "12rem",
@@ -136,6 +137,44 @@ export default function home() {
                     made from the assets owned
                     <div>
                       <Link to='/reports'>See More</Link>
+                    </div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+            <div
+              style={{
+                marginBottom: "12rem",
+                justifyContent: "space-evenly",
+                display: "flex",
+              }}>
+              <Card
+                style={{
+                  width: "32.5rem",
+                  height: "120%",
+                  backgroundColor: "lightcoral",
+                  border: "2px",
+                  borderRadius: "25px",
+                }}>
+                <Card.Img
+                  src='asset.avif'
+                  alt='track'
+                  style={{
+                    width: "32.5rem",
+                    aspectRatio: "1",
+                    alignSelf: "start",
+                    borderRadius: "25px",
+                    height: "14.1rem",
+                  }}
+                />
+                <Card.Body>
+                  <Card.Title>Manage Assets</Card.Title>
+                  <Card.Text>
+                    Manage your Assets for ease of retrival for purfomance
+                    checking and also for ease of conducting analysis that help
+                    generate reports.
+                    <div>
+                      <Link to='/asset'>See More</Link>
                     </div>
                   </Card.Text>
                 </Card.Body>

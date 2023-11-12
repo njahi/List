@@ -37,6 +37,7 @@ export default function home() {
             style={{
               display: "flex",
               justifyContent: "space-evenly",
+              margin: "10px",
             }}>
             <div style={{ display: "flex" }}>
               <div>
@@ -104,7 +105,7 @@ export default function home() {
               </div>
             </div>
           </div>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", marginTop: "0px" }}>
             <Row
               style={{ margin: "10px" }}
               xs={1}

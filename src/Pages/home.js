@@ -73,23 +73,6 @@ export default function home() {
               }}>
               <div
                 style={{
-                  backgroundColor: "lightcoral",
-                  marginBottom: "10px",
-                  width: "140px",
-                  height: "280px",
-                }}>
-                <p
-                  style={{
-                    font: "inherit",
-                    fontFamily: "sans-serif",
-                    fontStyle: "oblique",
-                  }}>
-                  Explore your various assets and be aware of its standing
-                  value.Our pride is a safe Asset
-                </p>
-              </div>
-              <div
-                style={{
                   marginLeft: "100px",
                   marginBottom: "300px",
                 }}>
@@ -101,6 +84,23 @@ export default function home() {
                     width: "450px",
                   }}
                 />
+              </div>
+              <div
+                style={{
+                  backgroundColor: "lightcoral",
+                  marginBottom: "10px",
+                  width: "210px",
+                  height: "280px",
+                }}>
+                <p
+                  style={{
+                    font: "inherit",
+                    fontFamily: "sans-serif",
+                    fontStyle: "oblique",
+                  }}>
+                  Explore your various assets and be aware of its standing
+                  value.Our pride is a safe Asset
+                </p>
               </div>
             </div>
             <div

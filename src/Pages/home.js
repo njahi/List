@@ -43,7 +43,7 @@ export default function home() {
                 <img
                   src='life.jpg'
                   alt='home'
-                  style={{ height: "250px", width: "380px" }}
+                  style={{ height: "350px", width: "450px" }}
                 />
               </div>
               <div
@@ -68,23 +68,9 @@ export default function home() {
             <div
               style={{
                 display: "flex",
-                marginTop: "20px",
-                marginLeft: "70px",
+                marginTop: "150px",
+                marginRight: "60px",
               }}>
-              <div
-                style={{
-                  marginLeft: "100px",
-                  marginBottom: "300px",
-                }}>
-                <img
-                  src='lay.avif'
-                  alt='home'
-                  style={{
-                    height: "250px",
-                    width: "380px",
-                  }}
-                />
-              </div>
               <div
                 style={{
                   backgroundColor: "lightcoral",
@@ -101,6 +87,20 @@ export default function home() {
                   Explore your various assets and be aware of its standing
                   value.Our pride is a safe Asset
                 </p>
+              </div>
+              <div
+                style={{
+                  marginLeft: "100px",
+                  marginBottom: "300px",
+                }}>
+                <img
+                  src='lay.avif'
+                  alt='home'
+                  style={{
+                    height: "350px",
+                    width: "450px",
+                  }}
+                />
               </div>
             </div>
             <div

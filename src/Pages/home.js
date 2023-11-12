@@ -106,6 +106,7 @@ export default function home() {
           </div>
           <div style={{ display: "flex" }}>
             <Row
+              style={{ margin: "10px" }}
               xs={1}
               md={2}
               className='g-4'>
@@ -139,7 +140,9 @@ export default function home() {
                     <Card.Text>
                       Track the sales of your assets by looking at the profits
                       made from the assets owned
-                      <div>
+                      <div
+                        style={{ marginTop: "20px" }}
+                        align='center'>
                         <Link to='/reports'>See More</Link>
                       </div>
                     </Card.Text>
@@ -177,7 +180,9 @@ export default function home() {
                       Manage your Assets for ease of retrival for purfomance
                       checking and also for ease of conducting analysis that
                       help generate reports.
-                      <div>
+                      <div
+                        style={{ marginTop: "20px" }}
+                        align='center'>
                         <Link to='/asset'>See More</Link>
                       </div>
                     </Card.Text>

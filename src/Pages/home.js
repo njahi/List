@@ -10,8 +10,9 @@ export default function home() {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
           backgroundColor: "lightskyblue",
+          alignItems: "flex-end",
         }}>
         {/* <Dashboard /> */}
 
@@ -108,7 +109,6 @@ export default function home() {
                 marginBottom: "12rem",
                 justifyContent: "space-evenly",
                 display: "flex",
-                flexDirection: "row",
               }}>
               <Card
                 style={{
@@ -142,22 +142,20 @@ export default function home() {
               </Card>
             </div>
           </div>
-
-          <Footer
-            style={{
-              backgroundColor: "grey",
-              display: "flex",
-              flexDirection: "row",
-              margin: "3px",
-              marginBottom: "0px",
-              height: "15rem",
-              borderRadius: "10px",
-            }}>
-            <div>
-              <div></div>
-            </div>
-          </Footer>
         </div>
+      </div>
+      <div style={{ marginTop: "0px" }}>
+        <Footer
+          style={{
+            backgroundColor: "grey",
+            display: "flex",
+            flexDirection: "row",
+            margin: "0px",
+            marginBottom: "0px",
+            height: "15rem",
+            borderRadius: "2px",
+            width: "84.5rem",
+          }}></Footer>
       </div>
     </>
   );

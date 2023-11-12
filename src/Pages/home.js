@@ -20,7 +20,7 @@ export default function home() {
             style={{
               backgroundColor: "grey",
               paddingBottom: "5px",
-              width: "75.8rem",
+              width: "84.5rem",
             }}>
             <h1
               style={{

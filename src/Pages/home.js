@@ -778,6 +778,7 @@ export default function home() {
                 <TfiEmail size={20} />
                 <span>EMAIL: njahigatinu@gmail.com</span>
               </div>
+              <hr />
             </div>
           </div>
         </Footer>

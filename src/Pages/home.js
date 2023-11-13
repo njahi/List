@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout";
 import { ImLocation2 } from "react-icons/im";
 import { BsTelephone } from "react-icons/bs";
+import { TfiEmail } from "react-icons/tfi";
 
 export default function home() {
   return (
@@ -761,16 +762,22 @@ export default function home() {
             width: "84.5rem",
           }}>
           <div>
-            <h5>Contact Info.</h5>
-            <ImLocation2 size={20} />
-            <span>
-              Our Address: P.O. BOX 414 - 80300, Machakos County, Kenya, East
-              Africa
-            </span>
+            <div>
+              <h5>Contact Info.</h5>
+              <ImLocation2 size={20} />
+              <span>
+                Address: P.O. BOX 414 - 80300, Machakos County, Kenya, East
+                Africa
+              </span>
 
-            <div style={{ marginTop: "20px" }}>
-              <BsTelephone size={20} />
-              <span>TELEPHONE: +254 794 175 241 / +254 716 354 043</span>
+              <div style={{ marginTop: "40px" }}>
+                <BsTelephone size={20} />
+                <span>TELEPHONE: +254 794 175 241 / +254 716 354 043</span>
+              </div>
+              <div style={{ marginTop: "40px" }}>
+                <TfiEmail size={20} />
+                <span>EMAIL: njahigatinu@gmail.com</span>
+              </div>
             </div>
           </div>
         </Footer>

@@ -3,6 +3,7 @@ import Dashboard from "../components/Dashboard";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout";
+import { ImLocation2 } from "react-icons/im";
 
 export default function home() {
   return (
@@ -757,7 +758,12 @@ export default function home() {
             height: "15rem",
             borderRadius: "2px",
             width: "84.5rem",
-          }}></Footer>
+          }}>
+          <div>
+            <h5>Contact Info.</h5>
+            <ImLocation2 size={20} />
+          </div>
+        </Footer>
       </div>
     </>
   );

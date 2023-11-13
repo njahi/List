@@ -1,4 +1,5 @@
 import React from "react";
+import Rechart from "../components/Recharts";
 
 function service() {
   return (
@@ -18,6 +19,7 @@ function service() {
       </div>
       <div>
         <p>Contact Supplier</p>
+        <Rechart />
       </div>
     </>
   );

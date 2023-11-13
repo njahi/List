@@ -6,6 +6,7 @@ import { Footer } from "antd/es/layout/layout";
 import { ImLocation2 } from "react-icons/im";
 import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
+import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 export default function home() {
   return (
@@ -762,6 +763,17 @@ export default function home() {
             width: "84.5rem",
           }}>
           <div style={{ display: "flex" }}>
+            <div style={{ marginRight: "20px" }}>
+              <img
+                style={{
+                  height: "100px",
+                  borderRadius: "50%",
+                  width: "100px",
+                }}
+                src='Furniture.jpg'
+                alt='icon'
+              />
+            </div>
             <div>
               <h5>Contact Info.</h5>
               <ImLocation2 size={20} />
@@ -782,6 +794,14 @@ export default function home() {
             </div>
             <div style={{ marginLeft: "80px" }}>
               <h5>Details</h5>
+            </div>
+            <div style={{ marginLeft: "180px" }}>
+              <h5>About</h5>
+            </div>
+            <div style={{ marginLeft: "180px" }}>
+              <h5>Legal</h5>
+              <AiOutlineCopyrightCircle size={20} />
+              <span>Copyright: Owned By developer</span>
             </div>
           </div>
         </Footer>

@@ -24,14 +24,11 @@ function reports() {
           <BarChart />
         </div>
         <div>
-          <LineChart />
-        </div>
-        <div>
-          <Statistics />
+          <Rechart />
         </div>
       </div>
       <div>
-        <Rechart />
+        <LineChart />
       </div>
     </>
   );

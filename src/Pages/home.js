@@ -761,7 +761,7 @@ export default function home() {
             borderRadius: "2px",
             width: "84.5rem",
           }}>
-          <div>
+          <div style={{ display: "flex" }}>
             <div>
               <h5>Contact Info.</h5>
               <ImLocation2 size={20} />
@@ -779,6 +779,9 @@ export default function home() {
                 <span>EMAIL: njahigatinu@gmail.com</span>
               </div>
               <hr />
+            </div>
+            <div style={{ marginLeft: "80px" }}>
+              <h5>Details</h5>
             </div>
           </div>
         </Footer>

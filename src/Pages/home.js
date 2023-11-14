@@ -109,8 +109,8 @@ export default function home() {
               </div>
             </div>
           </div>
-          <div>
-            <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }}>
+            <div>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='783.02687'

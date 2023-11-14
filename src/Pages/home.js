@@ -669,9 +669,19 @@ export default function home() {
                   fontStyle: "revert-layer",
                   color: "whitesmoke",
                 }}>
-                bdkjggduuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuvvb.
-                bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.
-                bbbbbbbbbbbbbbbbuf. ffffffffffffffffffffffffffff
+                Welcome to our cutting-edge Asset Management System, where
+                precision meets efficiency. Empowering businesses to seamlessly
+                navigate the complexities of asset oversight, our robust
+                platform offers a comprehensive suite of tools designed to
+                optimize resource allocation, enhance accountability, and
+                maximize returns on investments. From intuitive asset tracking
+                to insightful analytics, we provide a unified solution that
+                adapts to your unique needs. Harness the power of our advanced
+                technology to streamline operations, mitigate risks, and elevate
+                your organization's financial health. Experience a new era of
+                asset management excellence with us — where every asset is not
+                just managed, but strategically leveraged for unparalleled
+                success.
               </p>
             </div>
           </div>

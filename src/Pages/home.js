@@ -662,8 +662,13 @@ export default function home() {
                 />
               </svg>
             </div>
-            <div>
-              <p>
+            <div style={{ backgroundColor: "black" }}>
+              <p
+                style={{
+                  fontFamily: "sans-serif",
+                  fontStyle: "revert-layer",
+                  color: "whitesmoke",
+                }}>
                 bdkjggduuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuvvb.
                 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.
                 bbbbbbbbbbbbbbbbuf. ffffffffffffffffffffffffffff

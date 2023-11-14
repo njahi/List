@@ -1,6 +1,6 @@
 import React from "react";
 
-function documentation() {
+function Documentation() {
   return (
     <>
       <div style={{ backgroundColor: "grey" }}>
@@ -17,4 +17,4 @@ function documentation() {
     </>
   );
 }
-export default documentation;
+export default Documentation;

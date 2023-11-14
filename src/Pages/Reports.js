@@ -4,7 +4,7 @@ import LineChart from "../components/LinearChart";
 import Statistics from "../components/Statistics";
 import Rechart from "../components/Recharts";
 
-function reports() {
+function Reports() {
   return (
     <>
       <div className='header'>
@@ -33,4 +33,4 @@ function reports() {
     </>
   );
 }
-export default reports;
+export default Reports;

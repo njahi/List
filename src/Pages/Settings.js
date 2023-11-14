@@ -1,6 +1,6 @@
 import React from "react";
 
-function settings() {
+function Settings() {
   return <h1>let us set you up big boy</h1>;
 }
-export default settings;
+export default Settings;

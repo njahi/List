@@ -8,7 +8,7 @@ import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
-export default function home() {
+export default function Home() {
   return (
     <>
       <div

@@ -1,6 +1,6 @@
 import React from "react";
 
-function service() {
+function Service() {
   return (
     <>
       <div style={{ backgroundColor: "grey" }}>
@@ -22,4 +22,4 @@ function service() {
     </>
   );
 }
-export default service;
+export default Service;

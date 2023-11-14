@@ -1,22 +1,23 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import register from "./Pages/register";
-import login from "./Pages/login";
-import home from "./Pages/home";
-import about from "./Pages/about";
-import service from "./Pages/service";
-import asset from "./Pages/asset";
-import reports from "./Pages/reports";
-import documentation from "./Pages/documentation";
-import inventorymanagement from "./Pages/inventorymanagement";
-import settings from "./Pages/settings";
 import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Dashboard from "./components/Dashboard";
 import { SearchProvider } from "./context/SearchContext";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Service from "./Pages/Service";
+import Asset from "./Pages/Asset";
+import Reports from "./Pages/Reports";
+import Documentation from "./Pages/Documentation";
+import Inventorymanagement from "./Pages/InventoryManagement";
+import Settings from "./Pages/Settings";
+import PageNotFound from "./Pages/PageNotFound";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,62 +32,61 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
 
-      <Router>
+      <BrowserRouter>
         <Navbar />
 
         {/* <Dashboard /> */}
         <Toaster />
         <SearchProvider>
-          <div className='app'>
-            <Routes>
-              <Route
-                path='/'
-                exact
-                Component={register}
-              />
-              <Route
-                path='/login'
-                exact
-                Component={login}
-              />
-              <Route
-                path='/home'
-                exact
-                Component={home}
-              />
+          <Routes>
+            <Route
+              path='/'
+              element={<Register />}
+            />
+            <Route
+              path='/login'
+              element={<Login />}
+            />
+            <Route
+              path='/home'
+              element={<Home />}
+            />
 
-              <Route
-                path='/about'
-                Component={about}
-              />
-              <Route
-                path='/service'
-                Component={service}
-              />
-              <Route
-                path='/asset'
-                Component={asset}
-              />
-              <Route
-                path='/reports'
-                Component={reports}
-              />
-              <Route
-                path='/documentation'
-                Component={documentation}
-              />
-              <Route
-                path='/inventorymanagement'
-                Component={inventorymanagement}
-              />
-              <Route
-                path='/settings'
-                Component={settings}
-              />
-            </Routes>
-          </div>
+            <Route
+              path='/about'
+              element={<About />}
+            />
+            <Route
+              path='/service'
+              element={<Service />}
+            />
+            <Route
+              path='/asset'
+              element={<Asset />}
+            />
+            <Route
+              path='/reports'
+              element={<Reports />}
+            />
+            <Route
+              path='/documentation'
+              element={<Documentation />}
+            />
+            <Route
+              path='/inventorymanagement'
+              element={<Inventorymanagement />}
+            />
+            <Route
+              path='/settings'
+              element={<Settings />}
+            />
+            <Route
+              path='*'
+              element={<PageNotFound />}
+            />
+          </Routes>
         </SearchProvider>
-      </Router>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

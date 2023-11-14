@@ -1,7 +1,7 @@
 import React from "react";
 import AssetCard from "../components/AssetCard";
 
-function inventorymanagement() {
+function Inventorymanagement() {
   return <AssetCard />;
 }
-export default inventorymanagement;
+export default Inventorymanagement;

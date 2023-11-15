@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Search from "./Search";
 import LogOut from "./LogOut";
 import SideBar from "./SideBar";
@@ -25,10 +25,10 @@ function Navbar() {
 
         <ul>
           <li>
-            <Link to='/home'>Home</Link>
+            <NavLink to='/home'>Home</NavLink>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <NavLink to='/about'>About</NavLink>
           </li>
           <li>
             <SideBar />

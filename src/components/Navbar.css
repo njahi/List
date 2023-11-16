@@ -24,7 +24,18 @@ nav img {
 ul {
   display: flex;
   list-style: none;
+  gap: 2rem;
+  align-items: center;
 }
+nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 li {
   margin-left: 10px;
 }

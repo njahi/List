@@ -775,7 +775,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "0px" }}>
+      <div style={{ marginTop: "0px", gap: "2.5rem" }}>
         <Footer
           style={{
             backgroundColor: "grey",
@@ -817,12 +817,12 @@ export default function Home() {
               </div>
               <hr />
             </div>
-            <div style={{ marginLeft: "80px" }}>
+            {/* <div style={{ marginLeft: "80px" }}>
               <h5>Details</h5>
             </div>
             <div style={{ marginLeft: "180px" }}>
               <h5>About</h5>
-            </div>
+            </div> */}
             <div style={{ marginLeft: "180px" }}>
               <h5>Legal</h5>
               <AiOutlineCopyrightCircle size={20} />

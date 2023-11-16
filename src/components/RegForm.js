@@ -62,7 +62,17 @@ function RegForm() {
     <>
       <Form
         name='normal_login'
-        className='login-form'
+        style={{
+          padding: "2rem 3rem",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+          backgroundColor: " lightskyblue",
+          borderRadius: "7px",
+          marginLeft: "5.5rem",
+          minHeight: "calc(100vh - 6rem)",
+        }}
         initialValues={{
           remember: true,
         }}

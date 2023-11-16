@@ -775,7 +775,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "0px", gap: "2.5rem" }}>
+      <div style={{ marginTop: "0px" }}>
         <Footer
           style={{
             backgroundColor: "grey",
@@ -783,11 +783,11 @@ export default function Home() {
             flexDirection: "row",
             margin: "0px",
             marginBottom: "0px",
-            height: "15rem",
+            height: "20rem",
             borderRadius: "2px",
             width: "84.5rem",
           }}>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", gap: "5.5rem" }}>
             <div style={{ marginRight: "20px" }}>
               <img
                 style={{
@@ -798,6 +798,10 @@ export default function Home() {
                 src='Furniture.jpg'
                 alt='icon'
               />
+              <p style={{ fontFamily: "serif", textTransform: "uppercase" }}>
+                Welcome to Weka an all inclusive asset management system that
+                also offers sales tracking capabilities
+              </p>
             </div>
             <div>
               <h5>Contact Info.</h5>

@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createOrder } from "../services/apiAssets";
 
-export function useCreateAsset() {
+export function useCreateOrder() {
   const queryClient = useQueryClient();
   const {
     mutate: creatingOrder,

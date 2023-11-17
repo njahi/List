@@ -1,9 +1,18 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useCreateOrder } from "../hooks/useCreateOrder";
 
 export function PopUp3({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
+  const { creatingOrder, isCreatingOrder, error } = useCreateOrder();
+  function onSubmit(data) {
+    creatingOrder(data, {
+      onSettled: () => {
+        reset();
+      },
+    });
+  }
   return (
     <Modal
       size={25}

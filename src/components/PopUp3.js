@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useCreateOrder } from "../hooks/useCreateOrder";
+import toast from "react-hot-toast";
 
 export function PopUp3({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
@@ -12,6 +13,11 @@ export function PopUp3({ show, onClose, id }) {
         reset();
       },
     });
+    if (error) {
+      toast.error("something went wrong");
+    } else {
+      toast.success("Order added ");
+    }
   }
   return (
     <Modal
@@ -64,6 +70,14 @@ export function PopUp3({ show, onClose, id }) {
               {...register("description", { required: true })}
               placeholder='description'
             />
+          </div>
+          <div>
+            <button
+              type='primary'
+              htmlType='submit'
+              disabled={isCreatingOrder}>
+              {isCreatingOrder ? "Loading" : "Add Order"}
+            </button>
           </div>
         </form>
       </Modal.Body>

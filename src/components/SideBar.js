@@ -21,16 +21,16 @@ export default function SideBar() {
           <span className='dashboard-label'>Asset</span>
         </Link>
         <Link
-          to='/reports'
-          className='dashboard-item'>
-          <AiOutlineBarChart className='dashboard-icon' />
-          <span className='dashboard-label'>Reports</span>
-        </Link>
-        <Link
           to='/inventorymanagement'
           className='dashboard-item'>
           <AiOutlineDatabase className='dashboard-icon' />
           <span className='dashboard-label'>Inventory Management</span>
+        </Link>
+        <Link
+          to='/reports'
+          className='dashboard-item'>
+          <AiOutlineBarChart className='dashboard-icon' />
+          <span className='dashboard-label'>Reports</span>
         </Link>
         <Link
           to='/documentation'

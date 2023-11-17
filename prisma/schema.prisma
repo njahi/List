@@ -29,3 +29,12 @@ model User {
   email    String @unique
   password String
 }
+
+model Order {
+  id          String @id @default(cuid())
+  name        String
+  category    String
+  quantity    Int
+  amount      Int
+  description String
+}

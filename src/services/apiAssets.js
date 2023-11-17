@@ -26,14 +26,14 @@ export async function createAsset(newData) {
     throw new Error(error);
   }
 }
-export async function createOrder() {
+export async function createOrder(data) {
   try {
     const response = await fetch("http://localhost:5000/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(),
+      body: JSON.stringify(data),
     });
 
     if (!response.ok) {

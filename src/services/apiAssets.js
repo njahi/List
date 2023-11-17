@@ -26,6 +26,23 @@ export async function createAsset(newData) {
     throw new Error(error);
   }
 }
+export async function createOrder() {
+  try {
+    const response = await fetch("http://localhost:5000/api/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(),
+    });
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 export async function deleteAsset(id) {
   try {
     const response = await fetch(`http://localhost:5000/api/asset/${id}`, {

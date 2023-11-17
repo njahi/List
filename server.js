@@ -109,6 +109,29 @@ app.post("/api/asset", passport.authenticate("session"), async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+app.post("/api/order", passport.authenticate("session"), async (req, res) => {
+  const { name, category, quantity, amount, description } = req.body;
+  // const dateCreated = new Date();
+  // const dateUpdated = new Date();
+
+  try {
+    const order = await prisma.order.create({
+      data: {
+        name: name,
+        category: category,
+        quantity: parseInt(quantity),
+        amount: parseInt(amount),
+        description: description,
+      },
+    });
+    debug("AddedOrder:", order);
+
+    res.status(200).json(order);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 // admin login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;

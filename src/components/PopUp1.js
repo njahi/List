@@ -23,7 +23,7 @@ export function PopUp1({ show, onClose, id }) {
       show={show}
       onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Title>Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {assets && (

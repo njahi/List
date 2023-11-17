@@ -18,7 +18,7 @@ export function PopUp3({ show, onClose, id }) {
             <div>
               <label>Asset Name</label>
               <input
-                style={{ width: "70%" }}
+                style={{ width: "70%", borderRadius: "4px" }}
                 {...register("name", { required: true })}
                 placeholder='Asset Name'
               />
@@ -26,7 +26,7 @@ export function PopUp3({ show, onClose, id }) {
             <div>
               <label>Category</label>
               <input
-                style={{ width: "80%" }}
+                style={{ width: "80%", borderRadius: "4px" }}
                 {...register("category", { required: true })}
                 placeholder='Asset Category'
               />
@@ -34,7 +34,7 @@ export function PopUp3({ show, onClose, id }) {
             <div>
               <label>Quantity</label>
               <input
-                style={{ width: "80%" }}
+                style={{ width: "80%", borderRadius: "4px" }}
                 {...register("quantity", { required: true })}
                 placeholder='Asset Quantity'
               />
@@ -42,11 +42,19 @@ export function PopUp3({ show, onClose, id }) {
             <div>
               <label>Amount</label>
               <input
-                style={{ width: "80%" }}
+                style={{ width: "80%", borderRadius: "4px" }}
                 {...register("amount", { required: true })}
                 placeholder='Amount'
               />
             </div>
+          </div>
+          <div style={{ display: "flex", marginRight: "70px" }}>
+            <label style={{ marginTop: "6px" }}>Description</label>
+            <input
+              style={{ width: "80%", borderRadius: "4px" }}
+              {...register("description", { required: true })}
+              placeholder='description'
+            />
           </div>
         </form>
       </Modal.Body>

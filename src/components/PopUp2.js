@@ -47,6 +47,7 @@ export function PopUp2({ show, onClose, id }) {
           <Form.Item>
             <label>Name:</label>
             <input
+              style={{ borderRadius: "4px" }}
               {...register("name", { required: true })}
               placeholder='Asset Name'
             />
@@ -54,8 +55,25 @@ export function PopUp2({ show, onClose, id }) {
           <Form.Item>
             <label>Value:</label>
             <input
+              style={{ borderRadius: "4px" }}
               {...register("value", { required: true })}
               placeholder='Asset Value'
+            />
+          </Form.Item>
+          <Form.Item>
+            <label>Profit:</label>
+            <input
+              style={{ borderRadius: "4px" }}
+              {...register("profit", { required: true })}
+              placeholder='Asset Profit'
+            />
+          </Form.Item>
+          <Form.Item>
+            <label>Loss:</label>
+            <input
+              style={{ borderRadius: "4px" }}
+              {...register("loss", { required: true })}
+              placeholder='Asset Loss'
             />
           </Form.Item>
           <Form.Item>

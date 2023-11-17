@@ -28,7 +28,7 @@ export function PopUp3({ show, onClose, id }) {
         <Modal.Title>Edit Assets</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <div>
               <label>Asset Name</label>

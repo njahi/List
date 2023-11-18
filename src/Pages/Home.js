@@ -90,24 +90,22 @@ export default function Home() {
                   }}
                 />
               </div>
-              <div>
-                <div
+              <div
+                style={{
+                  backgroundColor: "lightcoral",
+                  marginBottom: "10px",
+                  width: "210px",
+                  height: "280px",
+                }}>
+                <p
                   style={{
-                    backgroundColor: "lightcoral",
-                    marginBottom: "10px",
-                    width: "210px",
-                    height: "280px",
+                    font: "inherit",
+                    fontFamily: "sans-serif",
+                    fontStyle: "oblique",
                   }}>
-                  <p
-                    style={{
-                      font: "inherit",
-                      fontFamily: "sans-serif",
-                      fontStyle: "oblique",
-                    }}>
-                    Explore your various assets and be aware of its standing
-                    value.Our pride is a safe Asset
-                  </p>
-                </div>
+                  Explore your various assets and be aware of its standing
+                  value.Our pride is a safe Asset
+                </p>
               </div>
             </div>
           </div>

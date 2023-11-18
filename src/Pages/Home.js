@@ -662,12 +662,18 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div style={{ backgroundColor: "black" }}>
+            <div
+              style={{
+                backgroundColor: "black",
+                width: "35.5rem",
+                borderRadius: "2.5rem",
+              }}>
               <p
                 style={{
                   fontFamily: "sans-serif",
                   fontStyle: "revert-layer",
                   color: "whitesmoke",
+                  marginTop: "50px",
                 }}>
                 Welcome to our cutting-edge Asset Management System, where
                 precision meets efficiency. Empowering businesses to seamlessly

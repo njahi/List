@@ -666,7 +666,8 @@ export default function Home() {
               style={{
                 backgroundColor: "black",
                 width: "35.5rem",
-                borderRadius: "2.5rem",
+                borderRadius: "5.5rem",
+                height: "40rem",
               }}>
               <p
                 style={{

@@ -668,6 +668,7 @@ export default function Home() {
                 width: "35.5rem",
                 borderRadius: "5.5rem",
                 height: "40rem",
+                marginTop: "60px",
               }}>
               <p
                 style={{

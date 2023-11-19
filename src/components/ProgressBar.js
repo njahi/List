@@ -2,6 +2,7 @@ import React from "react";
 import { Text, Progress, Card } from "@mantine/core";
 import { useOrders } from "../hooks/useOrders";
 import classes from "./ProgressBar.module.css";
+import { ApiKeys } from "resend/build/src/api-keys/api-keys";
 export default function ProgressBar() {
   const { orders, loadingOrders, error } = useOrders();
   if (loadingOrders) {
@@ -28,10 +29,12 @@ export default function ProgressBar() {
         fz='lg'
         fw={500}
         className={classes.stats}>
-        $5.431 / $10.000
+        {orders.name}
       </Text>
       <Progress
-        value={orders.amount}
+        value={orders.map((order) => (
+          <div key={order.id}>{order.amount}</div>
+        ))}
         mt='md'
         size='lg'
         radius='xl'

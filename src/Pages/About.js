@@ -28,7 +28,16 @@ function About() {
           backgroundColor: "green",
           marginBottom: "80px",
         }}>
-        <p>hdsvsnc ffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhb hfffffffffffff</p>
+        <b>
+          <p
+            style={{
+              textTransform: "uppercase",
+              fontFamily: "sans-serif",
+              fontSize: "medium",
+            }}>
+            Your Order List
+          </p>
+        </b>
         <ProgressBar />
       </div>
 

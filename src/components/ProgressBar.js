@@ -16,13 +16,13 @@ export default function ProgressBar() {
       withBorder
       radius='md'
       p='xl'
-      className='card'>
+      className={classes.card}>
       <Text
         fz='xs'
         tt='uppercase'
         fw={700}
         className={classes.tittle}>
-        Monthly goal
+        Order
       </Text>
       <Text
         fz='lg'

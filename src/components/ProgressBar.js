@@ -1,7 +1,16 @@
 import React from "react";
 import { Text, Progress, Card } from "@mantine/core";
+import { useOrders } from "../hooks/useOrders";
 import "./ProgressBar.css";
 export default function ProgressBar() {
+  const { orders, loadingOrders, error } = useOrders();
+  if (loadingOrders) {
+    return <h2>Loading</h2>;
+  }
+  if (error) {
+    console.log("error fetching data");
+  }
+
   return (
     <Card
       withBorder
@@ -22,7 +31,7 @@ export default function ProgressBar() {
         $5.431 / $10.000
       </Text>
       <Progress
-        value={}
+        value={orders.value}
         mt='md'
         size='lg'
         radius='xl'

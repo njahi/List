@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { MantineProvider } from "@mantine/core";
 import Dashboard from "./components/Dashboard";
 import { SearchProvider } from "./context/SearchContext";
 import Register from "./Pages/Register";

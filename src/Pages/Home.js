@@ -694,7 +694,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: "flex", marginTop: "0px" }}>
+          <div style={{ display: "flex", marginTop: "0px", gap: "10px" }}>
             <Row
               style={{ margin: "10px" }}
               xs={1}

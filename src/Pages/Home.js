@@ -676,6 +676,7 @@ export default function Home() {
                   fontStyle: "revert-layer",
                   color: "whitesmoke",
                   marginTop: "50px",
+                  wordSpacing: "1rem",
                 }}>
                 Welcome to our cutting-edge Asset Management System, where
                 precision meets efficiency. Empowering businesses to seamlessly

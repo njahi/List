@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PopUp3 } from "../components/PopUp3";
+import ProgressBar from "../components/ProgressBar";
 
 function About() {
   const [show, setShow] = useState(false);

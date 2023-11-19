@@ -21,7 +21,7 @@ export default function ProgressBar() {
         fz='xs'
         tt='uppercase'
         fw={700}
-        className='text'>
+        className='tittle'>
         Monthly goal
       </Text>
       <Text
@@ -31,7 +31,7 @@ export default function ProgressBar() {
         $5.431 / $10.000
       </Text>
       <Progress
-        value={orders.value}
+        value={orders.amount}
         mt='md'
         size='lg'
         radius='xl'

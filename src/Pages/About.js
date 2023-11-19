@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PopUp3 } from "../components/PopUp3";
+import ProgressBar from "../components/ProgressBar";
 
 function About() {
   const [show, setShow] = useState(false);
@@ -28,6 +29,7 @@ function About() {
           marginBottom: "80px",
         }}>
         <p>hdsvsnc ffhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhb hfffffffffffff</p>
+        <ProgressBar />
       </div>
 
       <div>

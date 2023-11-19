@@ -283,6 +283,16 @@ app.get("/api/asset", passport.authenticate("session"), async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+app.get("/api/order", passport.authenticate("session"), async (req, res) => {
+  try {
+    const orders = await prisma.order.findMany();
+    debug("Retrieved Orders:", orders);
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 // Get a specific asset by ID
 app.get("/api/asset/:id", async (req, res) => {
   const { id } = req.params;

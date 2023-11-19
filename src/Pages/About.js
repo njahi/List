@@ -25,7 +25,6 @@ function About() {
       <div
         style={{
           marginLeft: "60rem",
-          backgroundColor: "green",
           marginBottom: "80px",
         }}>
         <b>

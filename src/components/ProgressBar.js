@@ -2,7 +2,6 @@ import React from "react";
 import { Text, Progress, Card } from "@mantine/core";
 import { useOrders } from "../hooks/useOrders";
 import classes from "./ProgressBar.module.css";
-import { ApiKeys } from "resend/build/src/api-keys/api-keys";
 export default function ProgressBar() {
   const { orders, loadingOrders, error } = useOrders();
   if (loadingOrders) {
@@ -29,7 +28,9 @@ export default function ProgressBar() {
         fz='lg'
         fw={500}
         className={classes.stats}>
-        {orders.name}
+        {orders.map((order) => (
+          <div key={order.id}>{order.name}</div>
+        ))}
       </Text>
       <Progress
         value={orders.map((order) => (

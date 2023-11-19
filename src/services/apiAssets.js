@@ -9,6 +9,17 @@ export async function getAssets() {
     throw new Error("error encounterd");
   }
 }
+export async function getOrders() {
+  try {
+    const res = await fetch("http://localhost:5000/api/order");
+
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    throw new Error("error encounterd");
+  }
+}
 export async function createAsset(newData) {
   try {
     const response = await fetch("http://localhost:5000/api/asset", {

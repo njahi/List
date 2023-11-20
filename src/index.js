@@ -7,11 +7,11 @@ import { MantineProvider } from "@mantine/core";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <MantineProvider>
+  <MantineProvider>
+    <React.StrictMode>
       <App />
-    </MantineProvider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </MantineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

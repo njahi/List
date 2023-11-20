@@ -115,7 +115,7 @@ app.post("/api/order", passport.authenticate("session"), async (req, res) => {
   // const dateUpdated = new Date();
 
   try {
-    const order = await prisma.order.create({
+    const orders = await prisma.order.create({
       data: {
         name: name,
         category: category,
@@ -124,9 +124,9 @@ app.post("/api/order", passport.authenticate("session"), async (req, res) => {
         description: description,
       },
     });
-    debug("AddedOrder:", order);
+    debug("AddedOrder:", orders);
 
-    res.status(200).json(order);
+    res.status(200).json(orders);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });

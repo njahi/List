@@ -28,14 +28,14 @@ function About() {
           marginBottom: "80px",
         }}>
         <b>
-          <p
+          <h2
             style={{
               textTransform: "uppercase",
               fontFamily: "sans-serif",
               fontSize: "medium",
             }}>
             Your Order List
-          </p>
+          </h2>
         </b>
         <ProgressBar />
       </div>

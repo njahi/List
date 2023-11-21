@@ -7,7 +7,7 @@ export default function Toggle() {
     element.classList.toggle("dark-mode");
   }
   return (
-    <div>
+    <div className='body'>
       <h2>Toggle Dark/Light Mode</h2>
       <p>
         Click the button to toggle between dark and light mode for this page.

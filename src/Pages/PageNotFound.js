@@ -43,8 +43,13 @@ export default function PageNotFound() {
         address, or the page has been moved to another URL.
       </Text>
       <Group justify='center'>
-        <Link to='/login'>
-          <Button type='primary'>Login</Button>
+        <Link to='/home'>
+          <Button
+            variant='subtle'
+            size='md'
+            type='primary'>
+            Take me back to the Home Page
+          </Button>
         </Link>
         {/* <Button
           variant='subtle'

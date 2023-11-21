@@ -13,7 +13,7 @@ export default function PageNotFound() {
         style={{
           textAlign: "center",
           fontWeight: "900",
-          fontSize: "rem(38px",
+          fontSize: "rem(38px)",
           lineHeight: "1",
           marginBottom: "calc(1.5 * var(--mantine-spacing-xl))",
           color: "var(--mantine-color-gray-2)",

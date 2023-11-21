@@ -1,5 +1,6 @@
 import React from "react";
 import { Title, Text, Button, Container, Group } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 export default function PageNotFound() {
   return (
@@ -42,11 +43,14 @@ export default function PageNotFound() {
         address, or the page has been moved to another URL.
       </Text>
       <Group justify='center'>
-        <Button
+        <Link to='/login'>
+          <Button type='primary'>Login</Button>
+        </Link>
+        {/* <Button
           variant='subtle'
           size='md'>
           Take me back to home page
-        </Button>
+        </Button> */}
       </Group>
     </Container>
   );

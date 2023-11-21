@@ -33,7 +33,9 @@ export default function ProgressBar() {
         ))}
       </Text>
       <Progress
-        value={70}
+        value={orders.map((order) => (
+          <div>{order.amount}</div>
+        ))}
         mt='md'
         size='lg'
         radius='xl'

@@ -2,10 +2,10 @@ import { Table } from "react-bootstrap";
 import format from "date-fns/format";
 import { useAssets } from "../hooks/useAssets";
 
-export function formatDateTime(timestamp) {
-  const fileDate = new Date(timestamp);
-  return format(fileDate, "dd MMM yyyy, HH:mm:ss");
-}
+// export function formatDateTime(timestamp) {
+//   const fileDate = new Date(timestamp);
+//   return format(fileDate, "dd MMM yyyy, HH:mm:ss");
+// }
 
 function DataDisplay() {
   const { assets, loadingAssets, error } = useAssets();
@@ -31,7 +31,6 @@ function DataDisplay() {
           <th>Loss</th>
           <th>Year</th>
           <th>dateCreated</th>
-          <th>dateUpdated</th>
         </tr>
       </thead>
       <tbody>
@@ -42,8 +41,9 @@ function DataDisplay() {
             <td>{asset.profit}</td>
             <td>{asset.loss}</td>
             <td>{asset.year}</td>
-            <td>{formatDateTime(asset.dateCreated)}</td>
-            <td>{formatDateTime(asset.dateUpdated)}</td>
+            <td>{asset.created_at}</td>
+            {/* <td>{formatDateTime(asset.dateCreated)}</td>
+            <td>{formatDateTime(asset.dateUpdated)}</td> */}
           </tr>
         ))}
       </tbody>

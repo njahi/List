@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getOrders } from "../services/apiAssets";
+import { getOrders } from "../services/apiAssetsv1";
 
 export function useOrders() {
   const {

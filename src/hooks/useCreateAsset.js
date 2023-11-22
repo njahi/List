@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createAsset } from "../services/apiAssets";
+import { createAsset } from "../services/apiAssetsv1";
 
 export function useCreateAsset() {
   const queryClient = useQueryClient();

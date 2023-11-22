@@ -27,8 +27,6 @@ function DataDisplay() {
         <tr>
           <th>Name</th>
           <th>Value</th>
-          <th>Profit</th>
-          <th>Loss</th>
           <th>Year</th>
           <th>dateCreated</th>
           <th>dateUpdated</th>
@@ -39,8 +37,6 @@ function DataDisplay() {
           <tr key={asset.id}>
             <td>{asset.name}</td>
             <td>{asset.value}</td>
-            <td>{asset.profit}</td>
-            <td>{asset.loss}</td>
             <td>{asset.year}</td>
             <td>{asset.created_at}</td>
             <td>{asset.updated_at}</td>

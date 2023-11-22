@@ -55,3 +55,12 @@ export async function deleteAsset(id) {
 
   return data;
 }
+// [UPDATE] API for updating
+export async function editAsset(newAsset) {
+  console.log(newAsset);
+  const { data, error } = await supabase.from("Assets").update().eq("id", 1);
+  if (error) {
+    throw new Error(error?.message);
+  }
+  return data;
+}

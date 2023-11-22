@@ -13,38 +13,16 @@ function EntryForm({ onSubmit }) {
   const [imageUrl, setImageUrl] = useState("");
 
   function onFinish(data) {
-    const formattedDateCreated = format(dateCreated, "yyyy-MM-dd'T'HH:mm:ss");
-    const formattedDateUpdated = format(dateUpdated, "yyyy-MM-dd'T'HH:mm:ss");
-
-    const newData = {
-      ...data,
-      dateCreated: formattedDateCreated,
-      dateUpdated: formattedDateUpdated,
-      imageUrl: imageUrl,
-    };
-
-    creatingAsset(newData, {
-      onSettled: () => {
-        reset();
-      },
-    });
-    if (error) {
-      toast.error("something went wrong");
-    } else {
-      toast.success("Asset added ");
-    }
+    creatingAsset(
+      { ...data, isSold: false },
+      {
+        onSettled: () => {
+          reset();
+        },
+      }
+    );
   }
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      setImageUrl(e.target.result);
-    };
-
-    reader.readAsDataURL(file);
-  };
   return (
     <Form
       name='entry_form'
@@ -75,20 +53,7 @@ function EntryForm({ onSubmit }) {
           placeholder='Value'
         />
       </Form.Item>
-      <Form.Item>
-        <label>Profit:</label>
-        <input
-          {...register("profit", { required: true })}
-          placeholder='Profit'
-        />
-      </Form.Item>
-      <Form.Item>
-        <label>Loss:</label>
-        <input
-          {...register("loss", { required: true })}
-          placeholder='Loss'
-        />
-      </Form.Item>
+
       <Form.Item>
         <label>Year:</label>
         <input
@@ -96,33 +61,12 @@ function EntryForm({ onSubmit }) {
           placeholder='Year'
         />
       </Form.Item>
-      <Form.Item>
-        <label>DateCreated:</label>
-        <input
-          {...register("dateCreated", { required: true })}
-          type='datetime-local'
-          value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
-          onChange={(e) => setDateCreated(new Date(e.target.value))}
-          placeholder='dateCreated'
-          readOnly
-        />
-      </Form.Item>
-      <Form.Item>
-        <label>DateUpdated:</label>
-        <input
-          {...register("dateUpdated", { required: true })}
-          type='datetime-local'
-          value={format(new Date(), "yyyy-MM-dd HH:mm:ss")}
-          onChange={(e) => setDateUpdated(new Date(e.target.value))}
-          placeholder='dateUpdated'
-          readOnly
-        />
-      </Form.Item>
+
       <Form.Item>
         <input
+          {...register("image", { required: true })}
           type='file'
           accept='image/*'
-          onChange={handleImageUpload}
           placeholder='image'
         />
       </Form.Item>

@@ -51,7 +51,7 @@ function ProductCard() {
                   key={product.id}
                   className='product-card'>
                   <Card.Img
-                    src={product.imageUrl}
+                    src={product.image}
                     alt={product.name}
                     className='product-image'
                   />

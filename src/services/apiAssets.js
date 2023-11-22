@@ -20,7 +20,7 @@ export async function createAsset(newAsset) {
     ""
   );
 
-  const imagePath = `${supabaseUrl}/storage/v1/object/public/assetImages/${imageName}`;
+  const imagePath = `${supabaseUrl}/storage/v1/object/public/AssetsImage/${imageName}`;
 
   const { data, error } = await supabase
     .from("Assets")
@@ -38,6 +38,18 @@ export async function createAsset(newAsset) {
     });
 
   if (storageError) {
+    throw new Error(error?.message);
+  }
+
+  return data;
+}
+
+// [DELETE] API for deleting
+export async function deleteAsset(id) {
+  console.log(id);
+  const { data, error } = await supabase.from("Assets").delete().eq("id", id);
+
+  if (error) {
     throw new Error(error?.message);
   }
 

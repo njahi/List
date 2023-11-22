@@ -2,6 +2,7 @@ import React from "react";
 import { useDeleteAsset } from "../hooks/useDeleteAsset";
 import { FaTrashAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+
 export default function DeleteButton({ id }) {
   const { deletingAsset, isDeletingAsset, error } = useDeleteAsset();
   function handleDelete() {

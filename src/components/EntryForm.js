@@ -4,17 +4,13 @@ import { format } from "date-fns";
 import "./EntryForm.css";
 import { Form, Button } from "antd";
 import { useCreateAsset } from "../hooks/useCreateAsset";
-import toast from "react-hot-toast";
 function EntryForm({ onSubmit }) {
   const { register, handleSubmit, reset } = useForm();
   const { creatingAsset, isCreatingAsset, error } = useCreateAsset();
-  const [dateCreated, setDateCreated] = useState(new Date());
-  const [dateUpdated, setDateUpdated] = useState(new Date());
-  const [imageUrl, setImageUrl] = useState("");
 
   function onFinish(data) {
     creatingAsset(
-      { ...data, isSold: false },
+      { ...data, isSold: false, image: data.image[0] },
       {
         onSettled: () => {
           reset();

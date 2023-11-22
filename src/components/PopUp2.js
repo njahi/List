@@ -60,7 +60,7 @@ export function PopUp2({ show, onClose, id }) {
               placeholder='Asset Value'
             />
           </Form.Item>
-          <Form.Item>
+          {/* <Form.Item>
             <label>Profit:</label>
             <input
               style={{ borderRadius: "4px" }}
@@ -75,7 +75,7 @@ export function PopUp2({ show, onClose, id }) {
               {...register("loss", { required: true })}
               placeholder='Asset Loss'
             />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item>
             <Button
               type='primary'

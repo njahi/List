@@ -1,5 +1,5 @@
 import { Table } from "react-bootstrap";
-import format from "date-fns/format";
+// import format from "date-fns/format";
 import { useAssets } from "../hooks/useAssets";
 
 // export function formatDateTime(timestamp) {
@@ -31,6 +31,7 @@ function DataDisplay() {
           <th>Loss</th>
           <th>Year</th>
           <th>dateCreated</th>
+          <th>dateUpdated</th>
         </tr>
       </thead>
       <tbody>
@@ -42,6 +43,8 @@ function DataDisplay() {
             <td>{asset.loss}</td>
             <td>{asset.year}</td>
             <td>{asset.created_at}</td>
+            <td>{asset.updated_at}</td>
+
             {/* <td>{formatDateTime(asset.dateCreated)}</td>
             <td>{formatDateTime(asset.dateUpdated)}</td> */}
           </tr>

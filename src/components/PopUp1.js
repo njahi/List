@@ -1,23 +1,14 @@
-import { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { useGetAsset } from "../hooks/useGetAsset";
 
 export function PopUp1({ show, onClose, id }) {
-  const [assets, setAssets] = useState([]);
-  const fetchAssets = async () => {
-    try {
-      const response = await fetch(`http://localhost:5000/api/asset/${id}`);
-
-      const data = await response.json();
-
-      setAssets(data);
-    } catch (error) {
-      console.error("Error fetching assets:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchAssets();
-  }, []);
+  const { assets, loadingAssets, error } = useGetAsset();
+  if (loadingAssets) {
+    return <h2>Loading...</h2>;
+  }
+  if (error) {
+    console.log("error fetching data");
+  }
   return (
     <Modal
       show={show}
@@ -27,7 +18,7 @@ export function PopUp1({ show, onClose, id }) {
       </Modal.Header>
       <Modal.Body>
         {assets && (
-          <div>
+          <div key={assets.id}>
             <div>
               <label>Asset Name: {assets.name}</label>
             </div>
@@ -36,11 +27,6 @@ export function PopUp1({ show, onClose, id }) {
             </div>
             <div>
               <label>Year of purchase: {assets.year}</label>
-            </div>
-            <div>
-              <label>
-                Status:{assets.status === true ? "Not Sold" : "Sold"}
-              </label>
             </div>
           </div>
         )}

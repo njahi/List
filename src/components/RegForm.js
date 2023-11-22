@@ -18,12 +18,6 @@ function RegForm() {
     if (isAddingUser) {
       return <p>Adding...</p>;
     }
-    if (error) {
-      toast.error("error");
-    } else {
-      toast.success("User Registered");
-      window.location.assign("/login");
-    }
   }
 
   //   const onRegister = async (data) => {

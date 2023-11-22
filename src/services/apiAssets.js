@@ -12,6 +12,17 @@ export async function getAssets() {
 
   return data;
 }
+export async function getAsset(id) {
+  const { data, error } = await supabase.from("Assets").select().eq("id", id);
+
+  if (error) {
+    throw new Error(error?.message);
+  }
+
+  console.log(data);
+
+  return data;
+}
 
 // [CREATE API]  for Assets
 export async function createAsset(newAsset) {
@@ -57,10 +68,17 @@ export async function deleteAsset(id) {
 }
 // [UPDATE] API for updating
 export async function editAsset(newAsset) {
-  console.log(newAsset);
-  const { data, error } = await supabase.from("Assets").update().eq("id", 1);
+  const { id, data: updatedData } = newAsset;
+
+  console.log(updatedData);
+  const { data, error } = await supabase
+    .from("Assets")
+    .update({ ...updatedData })
+    .eq("id", id);
   if (error) {
     throw new Error(error?.message);
   }
   return data;
 }
+
+// []

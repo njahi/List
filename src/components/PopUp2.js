@@ -8,12 +8,14 @@ import toast from "react-hot-toast";
 export function PopUp2({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
   const { editingAsset, isEditingAsset, error } = useEditAsset();
+
   function handleEdit(data) {
     editingAsset(
       { id, data },
       {
         onSettled: () => {
           reset();
+          show = false;
         },
       }
     );
@@ -26,9 +28,7 @@ export function PopUp2({ show, onClose, id }) {
   if (isEditingAsset) {
     return <p>Editing...</p>;
   }
-  if (error) {
-    console.log(error);
-  }
+
   return (
     <Modal
       show={show}

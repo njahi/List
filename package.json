@@ -80,6 +80,6 @@
   },
   "devDependencies": {
     "prisma": "^5.5.2",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.19.0"
   }
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import { Button, Checkbox, Form } from "antd";
-import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useAddUser } from "../hooks/useAddUser";
 import { Link } from "react-router-dom";
 
 function RegForm() {
   const { handleSubmit, reset, register } = useForm();
-  const { addingUser, isAddingUser, error } = useAddUser();
+  const { addingUser, isAddingUser } = useAddUser();
   function onAdd(data) {
     console.log(data);
     addingUser(data, {

@@ -1,29 +1,5 @@
 import { supabase } from "./supabase";
 
-export async function login() {
-  // 1. Check if the user is an Admin
-  const users = await getUsers();
-
-  const currentUser = users.find((user) => user?.email === email);
-
-  const isAdmin = currentUser?.isAdmin;
-
-  if (!isAdmin || isAdmin === undefined) {
-    throw new Error("User Undefined");
-  }
-
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: password,
-  });
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return data;
-}
-
 export async function signUp({ email, password, name: userName }) {
   console.log(email, password, userName);
   const { data: newUser, error } = await supabase.auth.signUp({

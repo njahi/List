@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export async function login() {
+export async function login(email, password) {
   // 1. Check if the user is an Admin
   const users = await getUsers();
 

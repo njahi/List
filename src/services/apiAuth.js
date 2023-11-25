@@ -6,9 +6,9 @@ export async function login({ email, password }) {
 
   const currentUser = users.find((user) => user?.email === email);
 
-  const isAdmin = currentUser?.isAdmin;
+  // const isAdmin = currentUser?.isAdmin;
 
-  if (!isAdmin || isAdmin === undefined) {
+  if (!currentUser || currentUser === undefined) {
     throw new Error("User Undefined");
   }
 

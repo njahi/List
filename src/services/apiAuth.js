@@ -23,6 +23,15 @@ export async function login() {
 
   return data;
 }
+export async function getUsers() {
+  const { data, error } = await supabase.from("Users").select();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
 
 export async function signUp({ email, password, name: userName }) {
   console.log(email, password, userName);

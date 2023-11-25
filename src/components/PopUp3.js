@@ -62,6 +62,30 @@ export function PopUp3({ show, onClose, id }) {
                 placeholder='Amount'
               />
             </div>
+            <div>
+              <label>Supplier name</label>
+              <input
+                style={{ width: "80%", borderRadius: "4px" }}
+                {...register("supplier", { required: true })}
+                placeholder='Supplier'
+              />
+            </div>
+            <div>
+              <label>Supplier Email</label>
+              <input
+                style={{ width: "80%", borderRadius: "4px" }}
+                {...register("email", { required: true })}
+                placeholder='Amount'
+              />
+            </div>
+            <div>
+              <label>Phone Number</label>
+              <input
+                style={{ width: "80%", borderRadius: "4px" }}
+                {...register("number", { required: true })}
+                placeholder='Amount'
+              />
+            </div>
           </div>
           <div style={{ display: "flex", marginRight: "70px" }}>
             <label style={{ marginTop: "6px" }}>Description</label>

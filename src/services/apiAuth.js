@@ -24,7 +24,7 @@ export async function login({ email, password }) {
   return data;
 }
 export async function getUsers() {
-  const { data, error } = await supabase.from("Users").select();
+  const { data, error } = await supabase.from("User").select();
 
   if (error) {
     throw new Error(error.message);

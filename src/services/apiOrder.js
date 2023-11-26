@@ -8,3 +8,14 @@ export async function createOrder(newOrder) {
 
   return data;
 }
+export async function getOrders() {
+  const { data, error } = await supabase.from("Orders").select();
+
+  if (error) {
+    throw new Error(error?.message);
+  }
+
+  console.log(data);
+
+  return data;
+}

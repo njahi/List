@@ -29,7 +29,7 @@ export default function ProgressBar() {
         fw={500}
         className={classes.stats}>
         {orders.map((order) => (
-          <div key={order.id}>{order.name}</div>
+          <div key={order.id}>{order.orderName}</div>
         ))}
       </Text>
       <Progress

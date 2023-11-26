@@ -32,29 +32,10 @@ export function useCreateOrder() {
     isLoading: isCreatingOrder,
     error,
   } = useMutation({
-    mutationFn: ({
-      orderName,
-      category,
-      quantity,
-      amount,
-      supplier,
-      email,
-      number,
-      description,
-    }) =>
-      createOrder({
-        orderName,
-        category,
-        quantity,
-        amount,
-        supplier,
-        email,
-        number,
-        description,
-      }),
+    mutationFn: (data) => createOrder(data),
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["order"],
+        queryKey: ["orders"],
       });
       toast.success(`Order created`);
     },

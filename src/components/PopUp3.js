@@ -34,7 +34,7 @@ export function PopUp3({ show, onClose, id }) {
               <label>Asset Name</label>
               <input
                 style={{ width: "70%", borderRadius: "4px" }}
-                {...register("name", { required: true })}
+                {...register("orderName", { required: true })}
                 placeholder='Asset Name'
               />
             </div>

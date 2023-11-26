@@ -32,7 +32,26 @@ export function useCreateOrder() {
     error,
     isLoading,
   } = useMutation({
-    mutationFn: (data) => createOrder(data),
+    mutationFn: ({
+      orderName,
+      category,
+      quantity,
+      amount,
+      supplier,
+      email,
+      number,
+      description,
+    }) =>
+      createOrder({
+        orderName,
+        category,
+        quantity,
+        amount,
+        supplier,
+        email,
+        number,
+        description,
+      }),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["orders"],

@@ -1,5 +1,5 @@
 import { supabase } from "./supabase";
-export async function insertOrder(
+export async function createOrder(
   orderName,
   category,
   quantity,

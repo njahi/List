@@ -6,13 +6,32 @@ import toast from "react-hot-toast";
 
 export function PopUp3({ show, onClose, id }) {
   const { handleSubmit, register, reset } = useForm();
-  const { creatingOrder, isCreatingOrder, error } = useCreateOrder();
-  function onSubmit(data) {
-    creatingOrder(data, {
-      onSettled: () => {
-        reset();
-      },
-    });
+  const { cretingOrder, isCreatingOrder, error } = useCreateOrder();
+  function onSubmit(
+    orderName,
+    category,
+    quantity,
+    amount,
+    supplier,
+    email,
+    number,
+    description
+  ) {
+    cretingOrder(
+      orderName,
+      category,
+      quantity,
+      amount,
+      supplier,
+      email,
+      number,
+      description,
+      {
+        onSettled: () => {
+          reset();
+        },
+      }
+    );
     if (error) {
       toast.error("something went wrong");
     } else {

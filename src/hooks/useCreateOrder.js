@@ -28,9 +28,9 @@ export function useCreateOrder() {
   const queryClient = useQueryClient();
 
   const {
-    mutate: creteOrder,
+    mutate: cretingOrder,
+    isLoading: isCreatingOrder,
     error,
-    isLoading,
   } = useMutation({
     mutationFn: ({
       orderName,
@@ -63,5 +63,5 @@ export function useCreateOrder() {
     },
   });
 
-  return { creteOrder, isLoading, error };
+  return { cretingOrder, isCreatingOrder, error };
 }

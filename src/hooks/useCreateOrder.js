@@ -54,7 +54,7 @@ export function useCreateOrder() {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["orders"],
+        queryKey: ["order"],
       });
       toast.success(`Order created`);
     },

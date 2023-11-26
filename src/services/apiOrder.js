@@ -10,13 +10,13 @@ export async function createOrder(
   description
 ) {
   const { data, error } = await supabase.from("Orders").insert({
-    email: email,
-    order: orderName,
+    orderName: orderName,
     category: category,
     quantity: quantity,
     amount: amount,
     supplier: supplier,
-    number: number,
+    email: email,
+    number: email,
     description: description,
   });
 

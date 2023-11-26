@@ -34,8 +34,6 @@ export function PopUp3({ show, onClose, id }) {
     );
     if (error) {
       toast.error("something went wrong");
-    } else {
-      toast.success("Order added ");
     }
   }
   return (
@@ -50,11 +48,11 @@ export function PopUp3({ show, onClose, id }) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
             <div>
-              <label>Asset Name</label>
+              <label>Order Name</label>
               <input
                 style={{ width: "70%", borderRadius: "4px" }}
                 {...register("orderName", { required: true })}
-                placeholder='Asset Name'
+                placeholder='Order Name'
               />
             </div>
             <div>

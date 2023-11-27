@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react";
+import { useAssets } from "../hooks/useAssets";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import "./BarChart.css";
 ChartJS.register(...registerables);
 function BarChart() {
-  const [assets, setAssets] = useState([]);
-  const fetchAssets = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/api/asset");
-      const data = await response.json();
-      setAssets(data);
-    } catch (error) {
-      console.error("Error fetching assets:", error);
-    }
-  };
+  // const [assets, setAssets] = useState([]);
+  // const fetchAssets = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/api/asset");
+  //     const data = await response.json();
+  //     setAssets(data);
+  //   } catch (error) {
+  //     console.error("Error fetching assets:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchAssets();
-  }, []);
+  // useEffect(() => {
+  //   fetchAssets();
+  // }, []);
+  const { assets } = useAssets();
 
   const Assets = {
     labels: assets.map((data) => data.year),

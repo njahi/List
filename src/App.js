@@ -11,7 +11,7 @@ import { SearchProvider } from "./context/SearchContext";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
+import Order from "./Pages/Order";
 import Service from "./Pages/Service";
 import Asset from "./Pages/Asset";
 import Reports from "./Pages/Reports";
@@ -54,8 +54,8 @@ function App() {
             />
 
             <Route
-              path='/about'
-              element={<About />}
+              path='/order'
+              element={<Order />}
             />
             <Route
               path='/service'

@@ -3,7 +3,7 @@ import { getAsset } from "../services/apiAssets";
 
 export function useGetAsset(id) {
   const {
-    data: assets,
+    data: asset,
     isLoading: loadingAssets,
     error,
   } = useQuery({
@@ -11,5 +11,5 @@ export function useGetAsset(id) {
     queryKey: ["assets"],
   });
 
-  return { assets, loadingAssets, error };
+  return { asset, loadingAssets, error };
 }

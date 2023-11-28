@@ -14,6 +14,7 @@ export async function getAssets() {
 }
 export async function getAsset(id) {
   const { data, error } = await supabase.from("Assets").select().eq("id", id);
+  console.log(data);
 
   if (error) {
     throw new Error(error?.message);

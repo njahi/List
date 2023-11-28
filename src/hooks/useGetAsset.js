@@ -7,7 +7,7 @@ export function useGetAsset(id) {
     isLoading: loadingAssets,
     error,
   } = useQuery({
-    queryFn: getAsset,
+    queryFn: getAsset(id),
     queryKey: ["assets"],
   });
 

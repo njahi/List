@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PopUp3 } from "../components/PopUp3";
 import ProgressBar from "../components/ProgressBar";
 
-function About() {
+function Order() {
   const [show, setShow] = useState(false);
   function handleShow() {
     setShow(true);
@@ -49,4 +49,4 @@ function About() {
     </>
   );
 }
-export default About;
+export default Order;

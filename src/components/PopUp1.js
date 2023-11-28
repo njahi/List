@@ -2,7 +2,7 @@ import { Modal, Button } from "react-bootstrap";
 import { useGetAsset } from "../hooks/useGetAsset";
 
 export function PopUp1({ show, onClose, id }) {
-  const { asset, loadingAssets, error } = useGetAsset();
+  const { asset, loadingAssets, error } = useGetAsset(id);
   if (loadingAssets) {
     return <h2>Loading...</h2>;
   }

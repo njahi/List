@@ -8,7 +8,7 @@ export function useGetAsset(id) {
     error,
   } = useQuery({
     queryFn: getAsset(id),
-    queryKey: ["assets", id],
+    queryKey: ["assets"],
   });
 
   return { asset, loadingAsset, error };

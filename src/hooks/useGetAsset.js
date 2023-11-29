@@ -4,12 +4,12 @@ import { getAsset } from "../services/apiAssets";
 export function useGetAsset(id) {
   const {
     data: asset,
-    isLoading: loadingAssets,
+    isLoading: loadingAsset,
     error,
   } = useQuery({
     queryFn: getAsset(id),
-    queryKey: ["assets"],
+    queryKey: ["assets", id],
   });
 
-  return { asset, loadingAssets, error };
+  return { asset, loadingAsset, error };
 }

@@ -2,8 +2,8 @@ import { Modal, Button } from "react-bootstrap";
 import { useGetAsset } from "../hooks/useGetAsset";
 
 export function PopUp1({ show, onClose, id }) {
-  const { asset, loadingAssets, error } = useGetAsset(id);
-  if (loadingAssets) {
+  const { asset, loadingAsset, error } = useGetAsset(id);
+  if (loadingAsset) {
     return <h2>Loading...</h2>;
   }
   if (error) {
@@ -17,8 +17,8 @@ export function PopUp1({ show, onClose, id }) {
         <Modal.Title>Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {asset === id && (
-          <div>
+        {/* {asset && (
+          <div key={asset.id}>
             <div>
               <label>Asset Name: {asset.name}</label>
             </div>
@@ -29,14 +29,14 @@ export function PopUp1({ show, onClose, id }) {
               <label>Year of purchase: {asset.year}</label>
             </div>
           </div>
-        )}
-        {/* {asset.map((assets) => (
+        )} */}
+        {asset.map((assets) => (
           <div key={id}>
             <div>
               <label>Asset Name: {assets.name}</label>
             </div>
           </div>
-        ))} */}
+        ))}
       </Modal.Body>
       <Modal.Footer>
         <Button

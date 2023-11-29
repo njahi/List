@@ -13,8 +13,8 @@ export async function getAssets() {
   return data;
 }
 export async function getAsset(id) {
+  console.log(id);
   const { data, error } = await supabase.from("Assets").select().eq("id", id);
-  console.log(data);
 
   if (error) {
     throw new Error(error?.message);

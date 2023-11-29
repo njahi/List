@@ -17,8 +17,8 @@ export function PopUp1({ show, onClose, id }) {
         <Modal.Title>Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {asset && (
-          <div key={id}>
+        {asset === id && (
+          <div>
             <div>
               <label>Asset Name: {asset.name}</label>
             </div>
@@ -30,10 +30,10 @@ export function PopUp1({ show, onClose, id }) {
             </div>
           </div>
         )}
-        {/* {assets.map((asset) => (
-          <div key={asset.id}>
+        {/* {asset.map((assets) => (
+          <div key={id}>
             <div>
-              <label>Asset Name: {asset.name}</label>
+              <label>Asset Name: {assets.name}</label>
             </div>
           </div>
         ))} */}

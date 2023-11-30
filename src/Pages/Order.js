@@ -238,7 +238,7 @@ function Order() {
         </div>
         <div
           style={{
-            marginLeft: "60rem",
+            marginLeft: "20rem",
             marginBottom: "80px",
           }}>
           <b>

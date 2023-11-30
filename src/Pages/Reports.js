@@ -1,7 +1,6 @@
 import React from "react";
 import BarChart from "../components/BarChart";
 import LineChart from "../components/LinearChart";
-import Statistics from "../components/Statistics";
 import Rechart from "../components/Recharts";
 
 function Reports() {

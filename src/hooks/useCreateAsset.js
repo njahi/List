@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createAsset } from "../services/apiAssets";
-
+import toast from "react-hot-toast";
 export function useCreateAsset() {
   const queryClient = useQueryClient();
   const {
@@ -13,6 +13,7 @@ export function useCreateAsset() {
       queryClient.invalidateQueries({
         queryKey: ["assets"],
       });
+      toast.success("Asset Added");
     },
     onError: (error) => {
       console.log(error);

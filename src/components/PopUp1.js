@@ -1,6 +1,24 @@
 import { Modal, Button } from "react-bootstrap";
 import { useGetAsset } from "../hooks/useGetAsset";
 
+// const assignees = [
+//   {
+//     id: "1",
+//     name: "John Saga",
+//     age: "27",
+//   },
+//   {
+//     id: "2",
+//     name: "Lynn Njeri",
+//     age: "30",
+//   },
+//   {
+//     id: "3",
+//     name: "HUmphrey wanjau",
+//     age: "37",
+//   },
+// ];
+
 export function PopUp1({ show, onClose, id }) {
   const { asset, loadingAsset, error } = useGetAsset(id);
   if (loadingAsset) {
@@ -17,8 +35,8 @@ export function PopUp1({ show, onClose, id }) {
         <Modal.Title>Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {asset && (
-          <div key={id}>
+        {/* {asset && (
+          <div>
             <div>
               <label>Asset Name: {asset.name}</label>
             </div>
@@ -29,14 +47,14 @@ export function PopUp1({ show, onClose, id }) {
               <label>Year of purchase: {asset.year}</label>
             </div>
           </div>
-        )}
-        {/* {asset.map((assets) => (
+        )} */}
+        {asset.map((a) => (
           <div key={id}>
             <div>
-              <label>Asset Name: {assets.name}</label>
+              <label key={id}>Asset Name: {a.name}</label>
             </div>
           </div>
-        ))} */}
+        ))}
       </Modal.Body>
       <Modal.Footer>
         <Button

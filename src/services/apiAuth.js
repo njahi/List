@@ -5,6 +5,7 @@ export async function login({ email, password }) {
   const users = await getUsers();
 
   const currentUser = users.find((user) => user?.email === email);
+  console.log(currentUser);
 
   // const isAdmin = currentUser?.isAdmin;
 

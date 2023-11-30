@@ -15,6 +15,8 @@ export function PopUp3({ show, onClose, id }) {
     });
     if (error) {
       toast.error("something went wrong");
+    } else {
+      alert("Send Order Alert to suplier right?");
     }
   }
   return (

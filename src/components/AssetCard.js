@@ -65,22 +65,24 @@ function ProductCard({ currUser }) {
                     <Card.Text className='product-value'>
                       ${product.value}
                     </Card.Text>
-                    <div>
-                      <DetailButton id={product?.id} />
-                    </div>
-                    {currUser?.isAdmin && (
-                      <div
-                        style={{
-                          display: "flex",
-                        }}>
-                        <div style={{ marginLeft: "25px" }}>
-                          <EditButton id={product?.id} />
-                        </div>
-                        <div>
-                          <DeleteButton id={product?.id} />
-                        </div>
+                    <div style={{ display: "flex" }}>
+                      <div>
+                        <DetailButton id={product?.id} />
                       </div>
-                    )}
+                      {currUser?.isAdmin && (
+                        <div
+                          style={{
+                            display: "flex",
+                          }}>
+                          <div style={{ marginLeft: "25px" }}>
+                            <EditButton id={product?.id} />
+                          </div>
+                          <div>
+                            <DeleteButton id={product?.id} />
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>

@@ -30,11 +30,9 @@ function Navbar() {
           <li>
             <NavLink to='/home'>Home</NavLink>
           </li>
-          {currentUser?.isAdmin && (
-            <li>
-              <NavLink to='/order'>Order</NavLink>
-            </li>
-          )}
+          <li>
+            <NavLink to='/order'>Order</NavLink>
+          </li>
 
           <li>
             <SideBar />

@@ -2,11 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import Dashboard from "./components/Dashboard";
+// import Dashboard from "./components/Dashboard";
 import { SearchProvider } from "./context/SearchContext";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
@@ -15,7 +15,6 @@ import Order from "./Pages/Order";
 import Service from "./Pages/Service";
 import Asset from "./Pages/Asset";
 import Reports from "./Pages/Reports";
-import Documentation from "./Pages/Documentation";
 import Inventorymanagement from "./Pages/InventoryManagement";
 import Settings from "./Pages/Settings";
 import PageNotFound from "./Pages/PageNotFound";
@@ -34,7 +33,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
 
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* <Dashboard /> */}
         <Toaster />
@@ -68,10 +67,6 @@ function App() {
             <Route
               path='/reports'
               element={<Reports />}
-            />
-            <Route
-              path='/documentation'
-              element={<Documentation />}
             />
             <Route
               path='/inventorymanagement'

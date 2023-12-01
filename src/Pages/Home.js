@@ -1,5 +1,4 @@
 import React from "react";
-import Dashboard from "../components/Dashboard";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout";
@@ -7,10 +6,12 @@ import { ImLocation2 } from "react-icons/im";
 import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <div
         style={{
           display: "flex",

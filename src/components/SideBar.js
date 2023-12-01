@@ -23,6 +23,7 @@ export default function SideBar() {
           <RiDashboardLine className='dashboard-icon' />
           <span className='dashboard-label'>Asset</span>
         </Link>
+        <br />
 
         <Link
           to='/inventorymanagement'
@@ -30,24 +31,21 @@ export default function SideBar() {
           <AiOutlineDatabase className='dashboard-icon' />
           <span className='dashboard-label'>Inventory Management</span>
         </Link>
+        <br />
         <Link
           to='/reports'
           className='dashboard-item'>
           <AiOutlineBarChart className='dashboard-icon' />
           <span className='dashboard-label'>Reports</span>
         </Link>
-        <Link
-          to='/documentation'
-          className='dashboard-item'>
-          <AiOutlineFileText className='dashboard-icon' />
-          <span className='dashboard-label'>Documentation</span>
-        </Link>
+        <br />
         <Link
           to='/settings'
           className='dashboard-item'>
           <RiSettings2Line className='dashboard-icon' />
           <span className='dashboard-label'>Settings</span>
         </Link>
+        <br />
       </div>
     </div>
   );

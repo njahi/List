@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { PopUp3 } from "../components/PopUp3";
 import ProgressBar from "../components/ProgressBar";
-import { useUser } from "../hooks/useUser";
 
 function Order() {
-  const currentUser = useUser();
-  console.log(currentUser);
   const [show, setShow] = useState(false);
   function handleShow() {
     setShow(true);

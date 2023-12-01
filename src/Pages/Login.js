@@ -11,7 +11,12 @@ export default function Login() {
           height: "41.5rem",
         }}>
         <div style={{ display: "flex", marginLeft: "50px" }}>
-          <div style={{ marginLeft: "80px", justifyContent: "center" }}>
+          <div
+            style={{
+              marginLeft: "80px",
+              justifyContent: "center",
+              marginTop: "30px",
+            }}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='362.52377'

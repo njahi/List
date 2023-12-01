@@ -21,18 +21,18 @@ function BarChart() {
   const { assets } = useAssets();
 
   const Assets = {
-    labels: assets.map((data) => data.year),
+    labels: assets?.map((data) => data.year),
     datasets: [
       {
         label: "Asset profit",
-        data: assets.map((data) => data.profit),
+        data: assets?.map((data) => data.profit),
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 1,
       },
       {
         label: "Asset Loss",
-        data: assets.map((data) => data.loss),
+        data: assets?.map((data) => data.loss),
         backgroundColor: ["rgba(54, 162, 235, 0.2)"],
         borderColor: ["rgba(54, 162, 235, 1)"],
         borderWidth: 1,

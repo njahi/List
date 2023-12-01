@@ -6,8 +6,9 @@ import { useAssets } from "../hooks/useAssets";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 
-function ProductCard() {
+function ProductCard({ currUser }) {
   const { assets, loadingAssets, error } = useAssets();
+  console.log(assets);
   // if (loadingAssets) {
   //   return (
   //     <h2
@@ -45,8 +46,10 @@ function ProductCard() {
             xs={1}
             md={4}
             className='g-4'>
-            {assets.map((product) => (
-              <Col align='center'>
+            {assets.map((product, i) => (
+              <Col
+                align='center'
+                key={i}>
                 <Card
                   key={product.id}
                   className='product-card'>
@@ -62,20 +65,22 @@ function ProductCard() {
                     <Card.Text className='product-value'>
                       ${product.value}
                     </Card.Text>
-                    <div
-                      style={{
-                        display: "flex",
-                      }}>
-                      <div>
-                        <DetailButton id={product?.id} />
-                      </div>
-                      <div style={{ marginLeft: "25px" }}>
-                        <EditButton id={product?.id} />
-                      </div>
-                      <div>
-                        <DeleteButton id={product?.id} />
-                      </div>
+                    <div>
+                      <DetailButton id={product?.id} />
                     </div>
+                    {currUser?.isAdmin && (
+                      <div
+                        style={{
+                          display: "flex",
+                        }}>
+                        <div style={{ marginLeft: "25px" }}>
+                          <EditButton id={product?.id} />
+                        </div>
+                        <div>
+                          <DeleteButton id={product?.id} />
+                        </div>
+                      </div>
+                    )}
                   </Card.Body>
                 </Card>
               </Col>

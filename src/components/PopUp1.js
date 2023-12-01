@@ -1,5 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
-import { useGetAsset } from "../hooks/useGetAsset";
+import { useAssets } from "../hooks/useAssets";
 
 // const assignees = [
 //   {
@@ -20,8 +20,12 @@ import { useGetAsset } from "../hooks/useGetAsset";
 // ];
 
 export function PopUp1({ show, onClose, id }) {
-  const { asset, loadingAsset, error } = useGetAsset(id);
-  if (loadingAsset) {
+  const { assets, loadingAssets, error } = useAssets();
+
+  const asset = assets?.find((asset) => asset?.id === id);
+  console.log(asset);
+
+  if (loadingAssets) {
     return <h2>Loading...</h2>;
   }
   if (error) {

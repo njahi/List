@@ -1,12 +1,10 @@
-import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { format } from "date-fns";
 import "./EntryForm.css";
 import { Form, Button } from "antd";
 import { useCreateAsset } from "../hooks/useCreateAsset";
-function EntryForm({ onSubmit }) {
+function EntryForm({ onSubmit, currUser }) {
   const { register, handleSubmit, reset } = useForm();
-  const { creatingAsset, isCreatingAsset, error } = useCreateAsset();
+  const { creatingAsset, isCreatingAsset } = useCreateAsset();
 
   function onFinish(data) {
     creatingAsset(

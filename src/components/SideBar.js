@@ -7,9 +7,12 @@ import {
   AiOutlineBarChart,
   AiOutlineDatabase,
 } from "react-icons/ai";
+import { useUser } from "../hooks/useUser";
 import "./SideBar.css";
 
 export default function SideBar() {
+  const currentUser = useUser();
+  console.log(currentUser);
   return (
     <div className='dropdown'>
       <AiOutlineMenu size={30} />
@@ -20,6 +23,7 @@ export default function SideBar() {
           <RiDashboardLine className='dashboard-icon' />
           <span className='dashboard-label'>Asset</span>
         </Link>
+
         <Link
           to='/inventorymanagement'
           className='dashboard-item'>

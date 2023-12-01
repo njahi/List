@@ -1,10 +1,13 @@
 import React from "react";
 import DataDisplay from "../components/DataDisplay";
 import EntryForm from "../components/EntryForm";
+import { useUser } from "../hooks/useUser";
 function Asset() {
   const handleFormSubmit = (newAsset) => {
     console.log("New Asset:", newAsset);
   };
+  const currentUser = useUser();
+  console.log(currentUser);
   return (
     <div>
       <div
@@ -15,8 +18,11 @@ function Asset() {
         }}>
         <h1>WELCOME</h1>
       </div>
-      <EntryForm onSubmit={handleFormSubmit} />
-      <DataDisplay />
+      <EntryForm
+        onSubmit={handleFormSubmit}
+        currUser={currentUser}
+      />
+      <DataDisplay currUser={currentUser} />
     </div>
   );
 }

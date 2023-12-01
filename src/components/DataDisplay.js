@@ -7,7 +7,7 @@ import { useAssets } from "../hooks/useAssets";
 //   return format(fileDate, "dd MMM yyyy, HH:mm:ss");
 // }
 
-function DataDisplay() {
+function DataDisplay({ currUser }) {
   const { assets, loadingAssets, error } = useAssets();
 
   if (loadingAssets) {

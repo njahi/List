@@ -22,6 +22,10 @@ export async function login({ email, password }) {
     throw new Error(error.message);
   }
 
+  console.log(data);
+
+  sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+
   return data;
 }
 export async function getUsers() {

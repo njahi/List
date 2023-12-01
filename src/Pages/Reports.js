@@ -2,9 +2,11 @@ import React from "react";
 import BarChart from "../components/BarChart";
 import LineChart from "../components/LinearChart";
 import Rechart from "../components/Recharts";
+import Navbar from "../components/Navbar";
 function Reports() {
   return (
     <>
+      <Navbar />
       <div className='header'>
         <h1
           className='h1'

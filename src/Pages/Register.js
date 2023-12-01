@@ -7,7 +7,7 @@ export default function Register() {
       style={{
         display: "flex",
         backgroundColor: "lightseagreen",
-        height: "35.5rem",
+        height: "41.5rem",
       }}>
       <div style={{ marginLeft: "80px", justifyContent: "center" }}>
         <svg

@@ -124,7 +124,12 @@ export default function Register() {
           </g>
         </svg>
       </div>
-      <div style={{ justifyContent: "center", marginRight: "50px" }}>
+      <div
+        style={{
+          justifyContent: "center",
+          marginRight: "50px",
+          marginTop: "50px",
+        }}>
         <RegForm />
       </div>
     </div>

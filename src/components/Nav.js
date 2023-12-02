@@ -7,14 +7,14 @@ export default function Nav() {
       <Logo />
       <ul>
         <li>
-          <NavLink to='/asset'>Assets</NavLink>
+          <NavLink to='/manage'>Assets</NavLink>
         </li>
         <li>
-          <NavLink to='/reports'>Sales</NavLink>
+          <NavLink to='/sales'>Sales</NavLink>
         </li>
         <li>
           <NavLink
-            to='/register'
+            to='/login'
             className={styles.ctaLink}>
             Login
           </NavLink>

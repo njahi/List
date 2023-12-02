@@ -19,7 +19,7 @@ export default function LandingPage() {
           you have wandered the world.
         </h2>
         <Link
-          to='/login'
+          to='/register'
           className='cta'>
           Start tracking now
         </Link>

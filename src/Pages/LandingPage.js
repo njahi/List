@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import styles from "./LandingPage.module.css";
 
-export default function Homepage() {
+export default function LandingPage() {
   return (
     <main className={styles.homepage}>
       <Nav />
 
       <section>
         <h1>
-          You travel the world.
+          Own your assets.
           <br />
-          WorldWise keeps track of your adventures.
+          Weka will manage and keep track of the sales.
         </h1>
         <h2>
           A world map that tracks your footsteps into every city you can think
@@ -19,7 +19,7 @@ export default function Homepage() {
           you have wandered the world.
         </h2>
         <Link
-          to='/app'
+          to='/login'
           className='cta'>
           Start tracking now
         </Link>

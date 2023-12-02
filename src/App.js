@@ -18,6 +18,7 @@ import Reports from "./Pages/Reports";
 import Inventorymanagement from "./Pages/InventoryManagement";
 import Settings from "./Pages/Settings";
 import PageNotFound from "./Pages/PageNotFound";
+import LandingPage from "./Pages/LandingPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +40,10 @@ function App() {
         <Toaster />
         <SearchProvider>
           <Routes>
+            <Route
+              path='/'
+              element={<LandingPage />}
+            />
             <Route
               path='/'
               element={<Register />}

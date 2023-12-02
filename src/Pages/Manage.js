@@ -20,7 +20,7 @@ export default function Manage() {
           </p>
         </div>
         <img
-          src='img-2.jpg'
+          src='dreamer.png'
           alt='overview of a large city with skyscrapers'
         />
       </section>

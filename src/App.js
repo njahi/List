@@ -45,7 +45,7 @@ function App() {
               element={<LandingPage />}
             />
             <Route
-              path='/'
+              path='/register'
               element={<Register />}
             />
             <Route

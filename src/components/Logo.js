@@ -4,11 +4,14 @@ import styles from "./Logo.module.css";
 function Logo() {
   return (
     <Link to='/'>
-      <img
-        src='Furniture.jpg'
-        alt='Weka logo'
-        className={styles.logo}
-      />
+      <div style={{ display: "flex" }}>
+        <img
+          src='Furniture.jpg'
+          alt='Weka logo'
+          className={styles.logo}
+        />
+        <h2>..WEKA</h2>
+      </div>
     </Link>
   );
 }

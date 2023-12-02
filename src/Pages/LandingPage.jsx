@@ -6,7 +6,6 @@ export default function LandingPage() {
   return (
     <main className={styles.homepage}>
       <Nav />
-
       <section>
         <h1>
           Own your assets.

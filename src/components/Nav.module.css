@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.nav ul {
+ul {
   list-style: none;
   display: flex;
   align-items: center;

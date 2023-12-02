@@ -10,7 +10,7 @@ function Logo() {
           alt='Weka logo'
           className={styles.logo}
         />
-        <h2>..WEKA</h2>
+        <h2 style={{ marginTop: "30px" }}>..WEKA</h2>
       </div>
     </Link>
   );

@@ -22,7 +22,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 85.5%;
   box-sizing: border-box;
 }
 
@@ -38,7 +38,7 @@ label {
   font-weight: 600;
 }
 
-input,
+/* input,
 textarea {
   width: 100%;
   padding: 0.8rem 1.2rem;
@@ -48,7 +48,7 @@ textarea {
   border-radius: 5px;
   background-color: var(--color-light--3);
   transition: all 0.2s;
-}
+} */
 
 input:focus {
   outline: none;
@@ -60,10 +60,10 @@ input:focus {
   display: inline-block;
   background-color: var(--color-brand--2);
   color: var(--color-dark--1);
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-decoration: none;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 300;
   padding: 1rem 3rem;
   border-radius: 5px;
 }

@@ -87,7 +87,11 @@ function Loginn() {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
       </Form.Item>
-
+      <Form.Item>
+        <Link to='/register'>
+          <Button type='primary'>Register</Button>
+        </Link>
+      </Form.Item>
       <Form.Item>
         <Button
           type='primary'

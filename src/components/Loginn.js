@@ -88,20 +88,21 @@ function Loginn() {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
       </Form.Item>
+      <Form.Item>
+        <Button
+          type='primary'
+          htmlType='submit'
+          className='login-form-button'>
+          {isLoading ? <p>loading...</p> : "login"}
+        </Button>
+      </Form.Item>
       <div style={{ display: "flex" }}>
+        <p>Not yet Registered?</p>
+
         <Form.Item>
           <Link to='/register'>
             <Button type='primary'>Register</Button>
           </Link>
-        </Form.Item>
-
-        <Form.Item>
-          <Button
-            type='primary'
-            htmlType='submit'
-            className='login-form-button'>
-            {isLoading ? <p>loading...</p> : "login"}
-          </Button>
         </Form.Item>
       </div>
     </Form>

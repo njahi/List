@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import Logo from "./Logo";
 export default function Nav() {
@@ -7,17 +7,17 @@ export default function Nav() {
       <Logo />
       <ul>
         <li>
-          <NavLink to='/manage'>Assets</NavLink>
+          <Link to='/manage'>Assets</Link>
         </li>
         <li>
-          <NavLink to='/sales'>Sales</NavLink>
+          <Link to='/sales'>Sales</Link>
         </li>
         <li>
-          <NavLink
+          <Link
             to='/login'
             className={styles.ctaLink}>
             Login
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </nav>

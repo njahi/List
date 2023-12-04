@@ -96,7 +96,7 @@ function Loginn() {
           {isLoading ? <p>loading...</p> : "login"}
         </Button>
       </Form.Item>
-      {/* <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" }}>
         <p>Not yet Registered?</p>
 
         <Form.Item>
@@ -104,7 +104,7 @@ function Loginn() {
             <Button type='primary'>Register</Button>
           </Link>
         </Form.Item>
-      </div> */}
+      </div>
     </Form>
   );
 }

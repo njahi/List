@@ -42,18 +42,18 @@ function App() {
         <Toaster />
         <SearchProvider>
           <Routes>
-            {/* <Route
+            <Route
               path='/'
               element={<LandingPage />}
-            /> */}
-            {/* <Route
+            />
+            <Route
               path='/sales'
               element={<Sales />}
             />
             <Route
               path='/manage'
               element={<Manage />}
-            /> */}
+            />
             <Route
               path='/'
               element={<Register />}

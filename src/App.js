@@ -18,9 +18,9 @@ import Reports from "./Pages/Reports";
 import Inventorymanagement from "./Pages/InventoryManagement";
 import Settings from "./Pages/Settings";
 import PageNotFound from "./Pages/PageNotFound";
-// import LandingPage from "./Pages/LandingPage";
-// import Sales from "./Pages/Sales";
-// import Manage from "./Pages/Manage";
+import LandingPage from "./Pages/LandingPage";
+import Sales from "./Pages/Sales";
+import Manage from "./Pages/Manage";
 
 const queryClient = new QueryClient({
   defaultOptions: {

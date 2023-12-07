@@ -1,24 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import { useAssets } from "../hooks/useAssets";
 
-// const assignees = [
-//   {
-//     id: "1",
-//     name: "John Saga",
-//     age: "27",
-//   },
-//   {
-//     id: "2",
-//     name: "Lynn Njeri",
-//     age: "30",
-//   },
-//   {
-//     id: "3",
-//     name: "HUmphrey wanjau",
-//     age: "37",
-//   },
-// ];
-
 export function PopUp1({ show, onClose, id }) {
   const { assets, loadingAssets, error } = useAssets();
 

@@ -52,13 +52,6 @@ export function PopUp1({ show, onClose, id }) {
             </div>
           </div>
         )}
-        {/* {asset.map((a) => (
-          <div key={id}>
-            <div>
-              <label key={id}>Asset Name: {a.name}</label>
-            </div>
-          </div>
-        ))} */}
       </Modal.Body>
       <Modal.Footer>
         <Button

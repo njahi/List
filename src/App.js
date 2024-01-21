@@ -38,7 +38,7 @@ function App() {
           <Routes>
             <Route
               path='/'
-              element={<LandingPage />}
+              element={<Register />}
             />
             <Route
               path='/sales'

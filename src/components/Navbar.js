@@ -20,7 +20,12 @@ function Navbar() {
               className='Dash-image'
             />
           </div>
-          <div style={{ marginTop: "35px", fontFamily: "codystar" }}>
+          <div
+            style={{
+              marginTop: "35px",
+              fontFamily: "codystar",
+              fontSize: "5.6 rem",
+            }}>
             <h2>..WEKA</h2>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "./supabase";
 
-const UserContext = createContext();
+const UsersContext = createContext();
 function UsersProvider({ children }) {
   const [users, setUsers] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -19,17 +19,17 @@ function UsersProvider({ children }) {
     fetchUsers();
   }, []);
   return (
-    <UserContext.Provider
+    <UsersContext.Provider
       value={{
         users,
         isLoading,
       }}>
       {children}
-    </UserContext.Provider>
+    </UsersContext.Provider>
   );
 }
 function useUsers() {
-  const context = useContext(UserContext);
+  const context = useContext(UsersContext);
   if (context === undefined)
     throw new Error("The context was used outside the provider");
   return context;

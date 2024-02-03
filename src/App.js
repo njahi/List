@@ -18,6 +18,7 @@ import PageNotFound from "./Pages/PageNotFound";
 import LandingPage from "./Pages/LandingPage";
 import Sales from "./Pages/Sales";
 import Manage from "./Pages/Manage";
+import { UsersProvider } from "./context/userContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,67 +32,68 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
+      <UsersProvider>
+        <BrowserRouter>
+          <Toaster />
+          <SearchProvider>
+            <Routes>
+              <Route
+                path='/'
+                element={<Register />}
+              />
+              <Route
+                path='/sales'
+                element={<Sales />}
+              />
+              <Route
+                path='/manage'
+                element={<Manage />}
+              />
+              <Route
+                path='/'
+                element={<Register />}
+              />
+              <Route
+                path='/login'
+                element={<Login />}
+              />
+              <Route
+                path='/home'
+                element={<Home />}
+              />
 
-      <BrowserRouter>
-        <Toaster />
-        <SearchProvider>
-          <Routes>
-            <Route
-              path='/'
-              element={<Register />}
-            />
-            <Route
-              path='/sales'
-              element={<Sales />}
-            />
-            <Route
-              path='/manage'
-              element={<Manage />}
-            />
-            <Route
-              path='/'
-              element={<Register />}
-            />
-            <Route
-              path='/login'
-              element={<Login />}
-            />
-            <Route
-              path='/home'
-              element={<Home />}
-            />
-
-            <Route
-              path='/order'
-              element={<Order />}
-            />
-            <Route
-              path='/service'
-              element={<Service />}
-            />
-            <Route
-              path='/asset'
-              element={<Asset />}
-            />
-            <Route
-              path='/reports'
-              element={<Reports />}
-            />
-            <Route
-              path='/inventorymanagement'
-              element={<Inventorymanagement />}
-            />
-            <Route
-              path='/settings'
-              element={<Settings />}
-            />
-            <Route
-              path='*'
-              element={<PageNotFound />}
-            />
-          </Routes>
-        </SearchProvider>
-      </BrowserRouter>
+              <Route
+                path='/order'
+                element={<Order />}
+              />
+              <Route
+                path='/service'
+                element={<Service />}
+              />
+              <Route
+                path='/asset'
+                element={<Asset />}
+              />
+              <Route
+                path='/reports'
+                element={<Reports />}
+              />
+              <Route
+                path='/inventorymanagement'
+                element={<Inventorymanagement />}
+              />
+              <Route
+                path='/settings'
+                element={<Settings />}
+              />
+              <Route
+                path='*'
+                element={<PageNotFound />}
+              />
+            </Routes>
+          </SearchProvider>
+        </BrowserRouter>
+      </UsersProvider>
     </QueryClientProvider>
   );
 }

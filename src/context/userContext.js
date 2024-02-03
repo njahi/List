@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "./supabase";
 
+import { supabase } from "../services/supabase";
 const UsersContext = createContext();
 function UsersProvider({ children }) {
   const [users, setUsers] = useState();

@@ -8,7 +8,7 @@ function UsersProvider({ children }) {
   useEffect(function () {
     async function fetchUsers() {
       try {
-        const res = await supabase.from("Users").select();
+        const res = await supabase.from("User").select();
         const data = await res.json();
         setUsers(data);
       } catch (error) {

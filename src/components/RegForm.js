@@ -18,39 +18,6 @@ function RegForm() {
       return <p>Adding...</p>;
     }
   }
-
-  //   const onRegister = async (data) => {
-  //     try {
-  //       const response = await fetch("http://localhost:5000/api/user", {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(data),
-  //       });
-
-  //       if (!response.ok) {
-  //         toast.error("wrong credentials");
-  //       } else {
-  //         toast.success("login succesful", {
-  //           position: "top-center",
-  //         });
-  //       }
-
-  //       const responseData = await response.json();
-  //       console.log(responseData);
-
-  //       // Handle the response, e.g., save JWT token to local storage
-
-  //       // store JWT to the session
-  //       //   sessionStorage.setItem("Token:", "token");
-
-  //       // Handle redirect
-  //       window.location.assign("/login");
-  //     } catch (error) {
-  //       toast.error("Login failed:", error.message);
-  //     }
-  //   };
   return (
     <>
       <Form

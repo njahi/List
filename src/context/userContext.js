@@ -5,6 +5,7 @@ const UsersContext = createContext();
 function UsersProvider({ children }) {
   const [users, setUsers] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   useEffect(function () {
     async function fetchUsers() {
       try {

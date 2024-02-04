@@ -13,6 +13,7 @@ function UsersProvider({ children }) {
         const data = await res.json();
         setUsers(data);
       } catch (error) {
+        setError("error fetching data of users");
       } finally {
         setIsLoading(false);
       }

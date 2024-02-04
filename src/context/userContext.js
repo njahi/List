@@ -24,6 +24,7 @@ function UsersProvider({ children }) {
       value={{
         users,
         isLoading,
+        error,
       }}>
       {children}
     </UsersContext.Provider>

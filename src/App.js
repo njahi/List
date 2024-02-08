@@ -35,8 +35,7 @@ function App() {
 
           <Routes>
             <Route
-              // made this route the index page
-              path='/'
+              index
               element={<Register />}
             />
             <Route

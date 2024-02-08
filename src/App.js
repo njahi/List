@@ -14,10 +14,8 @@ import Reports from "./Pages/Reports";
 import Inventorymanagement from "./Pages/InventoryManagement";
 import Settings from "./Pages/Settings";
 import PageNotFound from "./Pages/PageNotFound";
-import LandingPage from "./Pages/LandingPage";
-import Sales from "./Pages/Sales";
-import Manage from "./Pages/Manage";
 import { UsersProvider } from "./context/userContext";
+import DetailButton from "./components/DetailButton";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,52 +35,46 @@ function App() {
 
           <Routes>
             <Route
-              path='/'
+              // made this route the index page
+              index
               element={<Register />}
             />
             <Route
-              path='/sales'
-              element={<Sales />}
-            />
-            <Route
-              path='/manage'
-              element={<Manage />}
-            />
-            <Route
-              path='/'
-              element={<Register />}
-            />
-            <Route
-              path='/login'
+              path='login'
               element={<Login />}
             />
             <Route
-              path='/home'
+              path='home'
               element={<Home />}
             />
 
             <Route
-              path='/order'
+              path='order'
               element={<Order />}
             />
             <Route
-              path='/service'
+              path='service'
               element={<Service />}
             />
             <Route
-              path='/asset'
+              path='asset'
               element={<Asset />}
             />
             <Route
-              path='/reports'
+              path='reports'
               element={<Reports />}
             />
             <Route
-              path='/inventorymanagement'
-              element={<Inventorymanagement />}
-            />
+              path='inventorymanagement'
+              element={<Inventorymanagement />}>
+              {/* nested a route inside another route */}
+              <Route
+                path='asset/:id'
+                element={<DetailButton />}
+              />
+            </Route>
             <Route
-              path='/settings'
+              path='settings'
               element={<Settings />}
             />
             <Route

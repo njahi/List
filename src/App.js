@@ -36,7 +36,7 @@ function App() {
           <Routes>
             <Route
               // made this route the index page
-              index
+              path='/'
               element={<Register />}
             />
             <Route
@@ -67,7 +67,6 @@ function App() {
             <Route
               path='inventorymanagement'
               element={<Inventorymanagement />}>
-              {/* nested a route inside another route */}
               <Route
                 path='asset/:id'
                 element={<DetailButton />}

@@ -65,12 +65,8 @@ function App() {
             />
             <Route
               path='inventorymanagement'
-              element={<Inventorymanagement />}>
-              <Route
-                path='asset/:id'
-                element={<DetailButton />}
-              />
-            </Route>
+              element={<Inventorymanagement />}
+            />
             <Route
               path='settings'
               element={<Settings />}

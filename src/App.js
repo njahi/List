@@ -15,7 +15,6 @@ import Inventorymanagement from "./Pages/InventoryManagement";
 import Settings from "./Pages/Settings";
 import PageNotFound from "./Pages/PageNotFound";
 import { UsersProvider } from "./context/userContext";
-import DetailButton from "./components/DetailButton";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -31,7 +31,7 @@ export default function Home() {
             <h1
               style={{
                 fontSize: "2.5rem",
-                fontFamily: "sans-serif",
+                fontFamily: "Codystar",
                 textAlign: "center",
                 textTransform: "uppercase",
               }}>

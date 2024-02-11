@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
 import { supabase } from "../services/supabase";
 const UsersContext = createContext();
 function UsersProvider({ children }) {
@@ -20,38 +19,12 @@ function UsersProvider({ children }) {
     }
     fetchUsers();
   }, []);
-  async function login({ email, password }) {
-    const currentUser = users.find((user) => user?.email === email);
-    console.log(currentUser);
-
-    // const isAdmin = currentUser?.isAdmin;
-
-    if (!currentUser || currentUser === undefined) {
-      throw new Error("User Undefined");
-    }
-
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
-
-    if (error) {
-      throw new Error(error.message);
-    }
-
-    console.log(data);
-
-    sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-    return data;
-  }
   return (
     <UsersContext.Provider
       value={{
         users,
         isLoading,
         error,
-        login,
       }}>
       {children}
     </UsersContext.Provider>

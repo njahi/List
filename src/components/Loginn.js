@@ -1,15 +1,17 @@
 import React from "react";
 import { Button, Checkbox, Form } from "antd";
 import { useForm } from "react-hook-form";
+import { useLogIn } from "../hooks/useLogin";
 import { Link } from "react-router-dom";
 import "./Loginn.css";
-import { useUsers } from "../context/userContext";
+// import { useUsers } from "../context/userContext";
 
 function Loginn() {
-  const { login, isLoading } = useUsers();
+  // const { login, isLoading } = useUsers();
   const { handleSubmit, register, reset } = useForm();
+  const { loginFn, isLoading } = useLogIn();
   async function onFinish(email, password) {
-    login(email, password, {
+    loginFn(email, password, {
       onSettled: () => {
         reset();
       },
@@ -53,7 +55,7 @@ function Loginn() {
           type='primary'
           htmlType='submit'
           className='login-form-button'>
-          {isLoading === true ? <p>loading...</p> : "login"}
+          {isLoading ? <p>loading...</p> : "login"}
         </Button>
       </Form.Item>
       <div style={{ display: "flex" }}>

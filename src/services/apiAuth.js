@@ -1,33 +1,33 @@
 import { supabase } from "./supabase";
 
-export async function login({ email, password }) {
-  // 1. Check if the user is an Admin
-  const users = await getUsers();
+// export async function login({ email, password }) {
+//   // 1. Check if the user is an Admin
+//   const users = await getUsers();
 
-  const currentUser = users.find((user) => user?.email === email);
-  console.log(currentUser);
+//   const currentUser = users.find((user) => user?.email === email);
+//   console.log(currentUser);
 
-  // const isAdmin = currentUser?.isAdmin;
+//   // const isAdmin = currentUser?.isAdmin;
 
-  if (!currentUser || currentUser === undefined) {
-    throw new Error("User Undefined");
-  }
+//   if (!currentUser || currentUser === undefined) {
+//     throw new Error("User Undefined");
+//   }
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: password,
-  });
+//   const { data, error } = await supabase.auth.signInWithPassword({
+//     email: email,
+//     password: password,
+//   });
 
-  if (error) {
-    throw new Error(error.message);
-  }
+//   if (error) {
+//     throw new Error(error.message);
+//   }
 
-  console.log(data);
+//   console.log(data);
 
-  sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+//   sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-  return data;
-}
+//   return data;
+// }
 export async function getUsers() {
   const { data, error } = await supabase.from("User").select();
 

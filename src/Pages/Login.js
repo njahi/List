@@ -8,7 +8,8 @@ export default function Login() {
         style={{
           display: "flex",
           backgroundColor: "lightseagreen",
-          height: "41.5rem",
+          height: "calc(100vh -5rem)",
+          margin: "2.5rem",
         }}>
         <div style={{ display: "flex", marginLeft: "50px" }}>
           <div

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div
+      <Main
         style={{
           display: "flex",
           justifyContent: "flex-start",
@@ -784,7 +784,7 @@ export default function Home() {
             </Row>
           </div>
         </div>
-      </div>
+      </Main>
       <div style={{ marginTop: "0px" }}>
         <Footer
           style={{

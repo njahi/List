@@ -7,6 +7,7 @@ import { BsTelephone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import Navbar from "../components/Navbar";
+import Main from "../components/Main";
 
 export default function Home() {
   return (

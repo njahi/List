@@ -13,12 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Main
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "flex-end",
-        }}>
+      <Main>
         {/* <Dashboard /> */}
 
         <div>

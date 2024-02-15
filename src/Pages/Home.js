@@ -17,7 +17,6 @@ export default function Home() {
         style={{
           display: "flex",
           justifyContent: "flex-start",
-          backgroundColor: "lightskyblue",
           alignItems: "flex-end",
         }}>
         {/* <Dashboard /> */}

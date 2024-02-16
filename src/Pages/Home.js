@@ -33,12 +33,12 @@ export default function Home() {
         </h1>
       </div>
       <Main>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", width: "52.5rem" }}>
           <div>
             <img
               src='life.jpg'
               alt='home'
-              style={{ height: "350px", width: "450px" }}
+              style={{ height: "350px", width: "650px" }}
             />
           </div>
           <div

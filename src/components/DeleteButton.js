@@ -1,9 +1,9 @@
-import React from "react";
+import { memo } from "react";
 import { useDeleteAsset } from "../hooks/useDeleteAsset";
 import { FaTrashAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
 
-export default function DeleteButton({ id }) {
+const DeleteButton = memo(function DeleteButton({ id }) {
   const { deletingAsset, isDeletingAsset, error } = useDeleteAsset();
   function handleDelete() {
     deletingAsset(id);
@@ -27,4 +27,5 @@ export default function DeleteButton({ id }) {
       <FaTrashAlt />
     </button>
   );
-}
+});
+export default DeleteButton;

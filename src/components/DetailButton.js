@@ -8,9 +8,9 @@ const DetailButton = memo(function DetailButton({ id }) {
   const handleShow = useCallback(function handleShow() {
     setShow(true);
   }, []);
-  function handleClose() {
+  const handleClose = useCallback(function handleClose() {
     setShow(false);
-  }
+  }, []);
   return (
     <>
       <Button

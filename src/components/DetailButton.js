@@ -9,6 +9,7 @@ const DetailButton = memo(function DetailButton({ id }) {
   function handleShow() {
     setShow(true);
   }
+  // no value needed on the dependancy array since the statesette does not change hence the usecallback hook could as well not be used in this situation.Done for practice purposes
   const handleClose = useCallback(function handleClose() {
     setShow(false);
   }, []);

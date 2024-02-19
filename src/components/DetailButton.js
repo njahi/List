@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { PopUp1 } from "./PopUp1";
+import PopUp1 from "./PopUp1";
 
 const DetailButton = memo(function DetailButton({ id }) {
   const [show, setShow] = useState(false);

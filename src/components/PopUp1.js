@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useAssets } from "../hooks/useAssets";
 
-export function PopUp1({ show, onClose, id }) {
+const PopUp1 = memo(function PopUp1({ show, onClose, id }) {
   const { assets, loadingAssets, error } = useAssets();
 
   const asset = assets?.find((asset) => asset?.id === id);
@@ -44,4 +45,5 @@ export function PopUp1({ show, onClose, id }) {
       </Modal.Footer>
     </Modal>
   );
-}
+});
+export default PopUp1;

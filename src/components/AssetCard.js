@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import "./AssetCard.css";
@@ -6,7 +7,7 @@ import { useAssets } from "../hooks/useAssets";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 
-function ProductCard({ currUser }) {
+const ProductCard = memo(function ProductCard({ currUser }) {
   const { assets, loadingAssets, error } = useAssets();
   console.log(assets);
   // if (loadingAssets) {
@@ -97,6 +98,6 @@ function ProductCard({ currUser }) {
       )}
     </>
   );
-}
+});
 
 export default ProductCard;

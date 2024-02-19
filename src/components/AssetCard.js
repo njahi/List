@@ -7,7 +7,7 @@ import { useAssets } from "../hooks/useAssets";
 import DeleteButton from "./DeleteButton";
 import EditButton from "./EditButton";
 
-const ProductCard = memo(function ProductCard({ currUser }) {
+const AssetCard = memo(function AssetCardCard({ currUser }) {
   const { assets, loadingAssets, error } = useAssets();
   console.log(assets);
   // if (loadingAssets) {
@@ -100,4 +100,4 @@ const ProductCard = memo(function ProductCard({ currUser }) {
   );
 });
 
-export default ProductCard;
+export default AssetCard;

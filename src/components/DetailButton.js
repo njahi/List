@@ -5,6 +5,7 @@ import PopUp1 from "./PopUp1";
 
 const DetailButton = memo(function DetailButton({ id }) {
   const [show, setShow] = useState(false);
+  // usecallback hook is used to memoized this function which are being passed as props to support memoization in the parent components
   const handleShow = useCallback(function handleShow() {
     setShow(true);
   }, []);

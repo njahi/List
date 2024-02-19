@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { PopUp1 } from "./PopUp1";
 
-export default function DetailButton({ id }) {
+const DetailButton = memo(function DetailButton({ id }) {
   const [show, setShow] = useState(false);
   function handleShow() {
     setShow(true);
@@ -25,4 +26,5 @@ export default function DetailButton({ id }) {
       />
     </>
   );
-}
+});
+export default DetailButton;

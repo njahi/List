@@ -1,10 +1,11 @@
-import React, { lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { UsersProvider } from "./context/userContext";
+import SpinnerFullPage from "./components/SpinnerFulPage";
 const Register = lazy(() => import("./Pages/Register"));
 const Login = lazy(() => import("./Pages/Login"));
 const Home = lazy(() => import("./Pages/Home"));
@@ -31,50 +32,51 @@ function App() {
       <UsersProvider>
         <BrowserRouter>
           <Toaster />
+          <Suspense fallback={SpinnerFullPage}>
+            <Routes>
+              <Route
+                index
+                element={<Register />}
+              />
+              <Route
+                path='login'
+                element={<Login />}
+              />
+              <Route
+                path='home'
+                element={<Home />}
+              />
 
-          <Routes>
-            <Route
-              index
-              element={<Register />}
-            />
-            <Route
-              path='login'
-              element={<Login />}
-            />
-            <Route
-              path='home'
-              element={<Home />}
-            />
-
-            <Route
-              path='order'
-              element={<Order />}
-            />
-            <Route
-              path='service'
-              element={<Service />}
-            />
-            <Route
-              path='asset'
-              element={<Asset />}
-            />
-            <Route
-              path='reports'
-              element={<Reports />}
-            />
-            <Route
-              path='inventorymanagement'
-              element={<Inventorymanagement />}
-            />
-            <Route
-              path='settings'
-              element={<Settings />}
-            />
-            <Route
-              path='*'
-              element={<PageNotFound />}
-            />
-          </Routes>
+              <Route
+                path='order'
+                element={<Order />}
+              />
+              <Route
+                path='service'
+                element={<Service />}
+              />
+              <Route
+                path='asset'
+                element={<Asset />}
+              />
+              <Route
+                path='reports'
+                element={<Reports />}
+              />
+              <Route
+                path='inventorymanagement'
+                element={<Inventorymanagement />}
+              />
+              <Route
+                path='settings'
+                element={<Settings />}
+              />
+              <Route
+                path='*'
+                element={<PageNotFound />}
+              />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </UsersProvider>
     </QueryClientProvider>

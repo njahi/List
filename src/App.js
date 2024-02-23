@@ -32,7 +32,7 @@ function App() {
       <UsersProvider>
         <BrowserRouter>
           <Toaster />
-          <Suspense fallback={SpinnerFullPage}>
+          <Suspense fallback={<SpinnerFullPage />}>
             <Routes>
               <Route
                 index

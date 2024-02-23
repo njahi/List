@@ -1,5 +1,5 @@
 import Spinner from "./Spinner";
-import "./SpinnerFullPage.css";
+import "./SpinnerFullPage.module.css";
 
 function SpinnerFullPage() {
   return (

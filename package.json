@@ -57,7 +57,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server",
+    "server": "nodemon server --delay",
     "dev": "email dev"
   },
   "eslintConfig": {
